@@ -72,7 +72,7 @@
                                                 role="button" data-toggle="dropdown" aria-haspopup="true"
                                                 aria-expanded="false">Membership</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="pages/login.html">Log In</a>
+                                                <a class="dropdown-item" href="pages/login.php">Log In</a>
                                                 <a class="dropdown-item" href="pages/reg.php">Registration</a>
                                             </div>
                                         </li>

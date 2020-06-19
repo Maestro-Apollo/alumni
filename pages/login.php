@@ -1,3 +1,9 @@
+<?php
+
+include('../classes/login.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,27 +23,22 @@
 
     <div class="container">
         <h2>Provide your Required Information</h2>
-        <form action="/action_page.php" class="needs-validation" novalidate>
+        <form class="needs-validation" method="post" novalidate>
             <div class="form-group">
                 <label for="uname">Email:</label>
-                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="email" required>
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
             <div class="form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password"
+                    required>
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="remember" required>Remember Me
-          <div class="valid-feedback">Valid.</div>
-          <div class="invalid-feedback">Check this checkbox to continue.</div>
-        </label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 
@@ -46,7 +47,7 @@
 
 
 
-    <footer id="dk-footer" class="dk-footer">
+    <footer id="dk-footer" class="dk-footer mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-4">
@@ -55,7 +56,8 @@
                             <img src="../image/logo.png" alt="footer_logo" class="img-fluid w-25 text-center">
                         </a>
                         <p class="footer-info-text text-light">
-                            Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.
+                            Reference site about Lorem Ipsum, giving information on its origins, as well as a random
+                            Lipsum generator.
                         </p>
                         <div class="footer-social-link">
                             <h3>Follow us</h3>
@@ -210,8 +212,8 @@
         <!-- Back to top -->
         <div id="back-to-top" class="back-to-top">
             <button class="btn btn-dark" title="Back to Top" style="display: block;">
-        <i class="fa fa-angle-up"></i>
-      </button>
+                <i class="fa fa-angle-up"></i>
+            </button>
         </div>
         <!-- End Back to top -->
     </footer>
@@ -220,24 +222,24 @@
 
 
     <script>
-        // Disable form submissions if there are invalid fields
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                // Get the forms we want to add validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
+    // Disable form submissions if there are invalid fields
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Get the forms we want to add validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
     </script>
 
 </body>
