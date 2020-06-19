@@ -53,9 +53,11 @@
                             <nav class="navbar navbar-expand-lg navbar-light">
                                 <a class="navbar-brand" href="#"><img src="image/logo1.png" /></a>
                                 <a class="navbar-brand1">IIT-JU</a>
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
                                 <div class="collapse navbar-collapse" id="navbarNav">
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item active">
@@ -66,10 +68,12 @@
                                         </li>
 
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Membership</a>
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">Membership</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                 <a class="dropdown-item" href="pages/login.html">Log In</a>
-                                                <a class="dropdown-item" href="pages/reg.html">Registration</a>
+                                                <a class="dropdown-item" href="pages/reg.php">Registration</a>
                                             </div>
                                         </li>
 
@@ -131,7 +135,8 @@
                             <img src="image/logo.png" alt="footer_logo" class="img-fluid w-25 text-center" />
                         </a>
                         <p class="footer-info-text text-light">
-                            Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.
+                            Reference site about Lorem Ipsum, giving information on its origins, as well as a random
+                            Lipsum generator.
                         </p>
                         <div class="footer-social-link">
                             <h3>Follow us</h3>
@@ -283,8 +288,8 @@
         <!-- Back to top -->
         <div id="back-to-top" class="back-to-top">
             <button class="btn btn-dark" title="Back to Top" style="display: block;">
-        <i class="fa fa-angle-up"></i>
-      </button>
+                <i class="fa fa-angle-up"></i>
+            </button>
         </div>
         <!-- End Back to top -->
     </footer>
