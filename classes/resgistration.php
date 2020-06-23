@@ -1,12 +1,13 @@
 <?php
 
 include('database.php');
+session_start();
 class resgistrationClass extends database
 {
     protected $link;
     public function resgistrationFunction()
     {
-        if (isset($_POST['submit'])) {
+          {
             $name = $_POST['name'];
             $batch = $_POST['batch'];
             $email = $_POST['email'];
@@ -39,12 +40,26 @@ class resgistrationClass extends database
                     if ($res2) {
                         move_uploaded_file($_FILES['image']['tmp_name'], $target);
                         echo "Added";
+                        
+                        /*passing email and id using session variable to profile page*/
+                        
+                        $_SESSION["user_mail"]=$email;
+                        $_SESSION["user_id"]=$id;
+                        $_SESSION["name"] = $name;
+                        
+                        header("location:profile.php");
+//                        header("location:welcome.php");
                         return $res2;
                     }
                 } else {
                     echo "Not added";
                     return false;
                 }
+                
+                /*after entering values into database, registration page should redirect user to it's profile*/
+                /*for redirection, we need to have $id from $res2 and $email from $sql*/
+             
+                
             }
         }
         # code...

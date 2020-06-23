@@ -53,6 +53,26 @@
         echo $row2['name'];*/
 
 
+//        class profileClass extends database
+//        {
+//            protected $link;
+//            public function fetchClass()
+//            {
+//
+//                $sql1 = "Select * from user where email = '$uMail' ";
+//                $resEmail = mysqli_query($this->link, $sql1);
+//                $sql2 = "Select * from user_info where user_id = '$uId' ";
+//                $resID = mysqli_query($this->link, $sql2);
+//                
+//                $row1 = mysqli_fetch_assoc($resEmail);
+//                $row2 = mysqli_fetch_assoc($resID);
+//                
+//                echo $row1['email'];
+//                echo $row2['name'];
+//            }
+//        }
+//        $obj = new resgistrationClass;
+//        $ObjReg = $obj->resgistrationFunction();
     
     ?>
     
@@ -63,7 +83,7 @@
        
        
        <div class="edit_profile">
-           <a class="edit_btn" href="update - Copy.php">Edit Profile</a>
+           <button class="edit_btn">Edit Profile</button>
        </div>
     
 <!--    creating a div for user image-->
@@ -104,13 +124,12 @@
     
         <div class="container">
             <div class="add_more">
-                <a class="more_btn" href="##">Add More</a>
+                <button class="more_btn">Add More</button>
             </div>
         </div>
          
     
-
-    
+    <!--<a href="$$"> <?php echo $row1['email']; ?></a>-->
 
 </body>
 
