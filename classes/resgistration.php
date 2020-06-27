@@ -14,6 +14,7 @@ class resgistrationClass extends database
             $phone = $_POST['phone'];
             $country = $_POST['country'];
             $city = $_POST['city'];
+            $is_valid = 0;
             $password = $_POST['password'];
             $image = time() . '_' . $_FILES['image']['name'];
             $target = '../user_img/' . $image;
@@ -26,7 +27,7 @@ class resgistrationClass extends database
                 echo "Email is already taken";
                 return false;
             } else {
-                $sql = "INSERT INTO `user` (`id`, `email`, `password`, `token`, `is_valid`, `created`, `updated`) VALUES (NULL, '$email', '$pass', NULL, NULL, NULL, NULL)";
+                $sql = "INSERT INTO `user` (`id`, `email`, `password`, `token`, `is_valid`, `created`, `updated`) VALUES (NULL, '$email', '$pass', NULL, '$is_valid', NULL, NULL)";
                 $res = mysqli_query($this->link, $sql);
                 if ($res) {
 
@@ -43,11 +44,11 @@ class resgistrationClass extends database
 
                         /*passing email and id using session variable to profile page*/
 
-                        $_SESSION["user_mail"] = $email;
-                        $_SESSION["user_id"] = $id;
-                        $_SESSION["name"] = $name;
+                        // $_SESSION["user_mail"] = $email;
+                        // $_SESSION["user_id"] = $id;
+                        // $_SESSION["name"] = $name;
 
-                        header("location:profile.php");
+                        // header("location:profile.php");
                         //                        header("location:welcome.php");
                         return $res2;
                     }
