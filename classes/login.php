@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include('database.php');
 class loginClass extends database
 {
@@ -9,14 +9,18 @@ class loginClass extends database
         if (isset($_POST['submit'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
+            $is_valid = 1;
 
-            $sql = "Select * from user where email = '$email' ";
+            $sql = "Select * from user where email = '$email' AND is_valid = '$is_valid' ";
             $res = mysqli_query($this->link, $sql);
             if (mysqli_num_rows($res) > 0) {
                 $row = mysqli_fetch_assoc($res);
                 $pass = $row['password'];
                 $passValid = password_verify($password, $pass);
                 if ($passValid == true) {
+
+                    $_SESSION["user_mail"] = $email;
+
 
                     header('location:../pages/profile.php');
                     return $res;

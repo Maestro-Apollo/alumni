@@ -40,7 +40,7 @@ class resgistrationClass extends database
                     $res2 = mysqli_query($this->link, $sql2);
                     if ($res2) {
                         move_uploaded_file($_FILES['image']['tmp_name'], $target);
-                        echo "Added";
+                        echo "Pending";
 
                         /*passing email and id using session variable to profile page*/
 

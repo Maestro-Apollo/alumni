@@ -7,8 +7,8 @@ class acceptClass extends database
     public function acceptFunction()
     {
         $id = $_GET['id'];
-        $vaild = 1;
-        $sql = "UPDATE `user` SET `is_valid`='$vaild' WHERE id = '$id' ";
+        $valid = 1;
+        $sql = "UPDATE `user` SET `is_valid`='$valid' WHERE id = '$id' ";
         $res = mysqli_query($this->link, $sql);
         if ($res) {
             header('location:../tables.php');
