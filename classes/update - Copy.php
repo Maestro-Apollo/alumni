@@ -27,16 +27,13 @@
   
       <?php
     session_start();
-//    include('reg.php');
-    
-//    $name = "noyon";
+
     
     /*session variable that holds user's mail and id*/
     $uMail = $_SESSION["user_mail"];
     $uId =  $_SESSION["user_id"];
     
-//    echo $uMail;
-//    echo $uId;
+
     
     /*defining variabes for database connection*/
         $hostname = "localhost";
@@ -58,30 +55,24 @@
         $row1 = mysqli_fetch_assoc($resEmail);
         $row2 = mysqli_fetch_assoc($resID);
     
-    
-//    }
     ?>
+   
    
 <!--   showing previous information-->
 
       <!--creating div for other information-->
     <div class="container main_info_area">  
-       
-       
+          
        <div class="edit_profile">
            <p class="edit_btn" text-align="center">Current Profile</p>
-       </div>
-    
+       </div>   
 <!--    creating a div for user image-->
        <div class="image_area">
-       
-           <img class="user_image" src="../user_img/<?php echo $row2['image']; ?>">
-       
-       </div>
+           <img class="user_image" src="../user_img/<?php echo $row2['image']; ?>">   
+        </div>
        
         
         <div class="user_information">
-       
           <div class="row">
                <div class="col-md-6 name_batch">
                     Name - <a href="#"> <?php echo $row2['name']; ?> </a><br>
@@ -89,8 +80,7 @@
                     Current Country - <a href="#"> <?php echo $row2['current_country']; ?> </a><br>
                </div>
 
-
-               <div class="col-md-6 institute">
+             <div class="col-md-6 institute">
                    Institute - <a href="#"> Institute name </a><br>
                    Position -  <a href="#"> Position name </a><br>
                     Current City - <a href="#"> <?php echo $row2['current_city']; ?> </a><br>
@@ -102,10 +92,7 @@
            Email - <a href="#" class="mail"> <?php echo $row1['email']; ?> </a>
            </div>
           
-       </div>
-       
-       
-        
+       </div>    
     </div>
     
             
@@ -244,9 +231,12 @@
             $up1 = mysqli_query($link,$userTableUp);
 
 
-//            include('profile.php');
-            header("location:profile.php");
-            ob_end_flush();
+            
+            $_SESSION["user_mail"] = $email;
+            $_SESSION["user_id"] = $uId;
+            
+            header("location:../pages/profile.php");
+//            ob_end_flush();
                   
         }
       ?>    

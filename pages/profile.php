@@ -16,12 +16,9 @@
 </head>
 
 <body>
-
-<!--    <h2>Welcome</h2>-->
     
     <?php
     
-//        include('database.php');
         session_start();
     
         /*receiving values using session variable*/
@@ -47,13 +44,7 @@
     /*values are fetched and are in the row1 and row2 arrays*/
         $row1 = mysqli_fetch_assoc($resEmail);
         $row2 = mysqli_fetch_assoc($resID);
-                
-    /*values can be fetched using indexing-- indexes are column names in the respective table*/
-       /* echo $row1['email'];
-        echo $row2['name'];*/
-
-
-    
+   
     ?>
     
     
@@ -63,7 +54,7 @@
        
        
        <div class="edit_profile">
-           <a class="edit_btn" href="update - Copy.php">Edit Profile</a>
+           <a class="edit_btn" href="../classes/update - Copy.php">Edit Profile</a>
        </div>
     
 <!--    creating a div for user image-->
@@ -74,15 +65,13 @@
        </div>
        
         
-        <div class="user_information">
-       
+        <div class="user_information">      
           <div class="row">
                <div class="col-md-6 name_batch">
                     Name - <a href="#"> <?php echo $row2['name']; ?> </a><br>
                     Batch - <a href="#"> <?php echo $row2['batch']; ?> </a><br>
                     Current Country - <a href="#"> <?php echo $row2['current_country']; ?> </a><br>
                </div>
-
 
                <div class="col-md-6 institute">
                    Institute - <a href="#"> Institute name </a><br>
@@ -94,8 +83,7 @@
           <div class="contact">
            Phone - <a href="#" class="phone"> <?php echo $row2['phone']; ?> </a>
            Email - <a href="#" class="mail"> <?php echo $row1['email']; ?> </a>
-           </div>
-          
+           </div>        
        </div>
        
        
@@ -107,10 +95,6 @@
                 <a class="more_btn" href="##">Add More</a>
             </div>
         </div>
-         
-    
-
-    
 
 </body>
 

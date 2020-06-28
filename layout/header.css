@@ -1,0 +1,17 @@
+.menuClass{
+    background: black;
+}
+.navbar-collapse{
+    background: black;
+}
+
+.dropdown-menu a{
+    background: black;
+    color: white;
+}
+
+
+.dropdown-menu a:hover{
+    background: rgba(0,0,0,0.5);
+    color: white;
+}

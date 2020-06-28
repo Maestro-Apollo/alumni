@@ -16,10 +16,12 @@ class loginClass extends database
             if (mysqli_num_rows($res) > 0) {
                 $row = mysqli_fetch_assoc($res);
                 $pass = $row['password'];
+                $u_id = $row['id'];
                 $passValid = password_verify($password, $pass);
                 if ($passValid == true) {
 
                     $_SESSION["user_mail"] = $email;
+                    $_SESSION["user_id"] = $u_id;
 
 
                     header('location:../pages/profile.php');

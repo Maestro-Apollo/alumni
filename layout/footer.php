@@ -1,63 +1,27 @@
-<?php
-
-include('../classes/login.php');
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Log In</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>IIT JU Alumni Association</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="footer.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 </head>
-
 <body>
     
-    <?php
-//    include("../header.php");
-    ?>
+        <!-- Footer -->
 
-    <div class="container">
-        <h2>Provide your Required Information</h2>
-        <form class="needs-validation" method="post" novalidate>
-            <div class="form-group">
-                <label for="uname">Email:</label>
-                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="email" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
-            </div>
-            <div class="form-group">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password"
-                    required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
-            </div>
-
-            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
-
-    <!-- Footer -->
-
-
-
-
-    <footer id="dk-footer" class="dk-footer mt-5">
+    <footer id="dk-footer" class="dk-footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-4">
                     <div class="dk-footer-box-info text-center">
                         <a href="index.html" class="footer-logo text-center">
-                            <img src="../image/logo.png" alt="footer_logo" class="img-fluid w-25 text-center">
+                            <img src="image/logo.png" alt="footer_logo" class="img-fluid w-25 text-center" />
                         </a>
                         <p class="footer-info-text text-light">
                             Reference site about Lorem Ipsum, giving information on its origins, as well as a random
@@ -97,7 +61,7 @@ include('../classes/login.php');
                     </div>
                     <!-- End Footer info -->
                     <div class="footer-awarad">
-                        <img src="images/icon/best.png" alt="">
+                        <img src="images/icon/best.png" alt="" />
                         <p>Best Design Company 2019</p>
                     </div>
                 </div>
@@ -112,7 +76,6 @@ include('../classes/login.php');
                                 <!-- End contact Icon -->
                                 <div class="contact-info">
                                     <h3>Jahangirnagar University</h3>
-
                                 </div>
                                 <!-- End Contact Info -->
                             </div>
@@ -127,7 +90,6 @@ include('../classes/login.php');
                                 <!-- End contact Icon -->
                                 <div class="contact-info">
                                     <h3>95 711 9 5353</h3>
-
                                 </div>
                                 <!-- End Contact Info -->
                             </div>
@@ -183,7 +145,8 @@ include('../classes/login.php');
                                 </div>
                                 <p class="text-light">
                                     <!-- Don’t miss to subscribe to our new feeds, kindly fill the form below. -->
-                                    Reference site about Lorem Ipsum, giving information on its origins, as well.</p>
+                                    Reference site about Lorem Ipsum, giving information on its origins, as well.
+                                </p>
 
                                 <!-- End form -->
                             </div>
@@ -199,14 +162,12 @@ include('../classes/login.php');
         </div>
         <!-- End Contact Container -->
 
-
         <div class="copyright">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <span>Copyright © 2020, All Right Reserved JU Alumni</span>
                     </div>
-
                 </div>
                 <!-- End Row -->
             </div>
@@ -223,29 +184,10 @@ include('../classes/login.php');
     </footer>
 
     <!-- ./Footer -->
-
-
-    <script>
-    // Disable form submissions if there are invalid fields
-    (function() {
-        'use strict';
-        window.addEventListener('load', function() {
-            // Get the forms we want to add validation styles to
-            var forms = document.getElementsByClassName('needs-validation');
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                    if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        }, false);
-    })();
-    </script>
-
+    <?php
+//    include("header.php");
+    ?>
+    
+    
 </body>
-
 </html>

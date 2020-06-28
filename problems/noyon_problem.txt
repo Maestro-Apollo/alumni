@@ -1,0 +1,8 @@
+1.Registration/Login --> redirected to pages/Profile.php(it works perfectly). 
+  
+2. Profile.php shows all information, has additional options -- Edit Profile & Add More
+
+3. When "Edit profile" is clicked, takes to "classes/update copy.php"
+
+4. after update button is clicked, I want to redirect it to pages/profile.php with updated values to show, but it remains in the same page although values are updated in the database.
+The next time i login in with updated value, it shows them perfectly. Here i also used "header(location---)" as before but it is not working when i want to show/redirect to profile.php immediately after update!!
