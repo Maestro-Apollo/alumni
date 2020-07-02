@@ -34,15 +34,7 @@
                 <div class="carousel-inner">
                     <!--preMenu section starts-->
 
-                    <section id="preMenu">
-                        <div class="container">
-                            <div class="Searchbar">
-                                <a id="contact" href="##">Contact</a>
-                                <input id="bar" type="text" placeholder="search" />
-                                <a id="searchIcon" href="##"><i class="fab fa-searchengin"></i></a>
-                            </div>
-                        </div>
-                    </section>
+                    
 
                     <!--preMenu section ends-->
 
@@ -67,6 +59,19 @@
                                             <a class="nav-link" href="#">About</a>
                                         </li>
 
+                                        <li class="nav-item">
+                                           <a class="nav-link" href="gallery.html" > Gallery </a>
+                                        </li> 
+
+                                        
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Events</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Notice</a>
+                                        </li>
+
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                                 role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -77,12 +82,14 @@
                                             </div>
                                         </li>
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Events</a>
+                                        
+                                        <li class="Searchbar">
+                                           
+                                            <input id="bar" type="text" placeholder="search" />
+                                            <a id="searchIcon" href="##"><i class="fab fa-searchengin"></i></a>
+                                            <img src= "image/search.svg" alt= "search-icon">
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Notice</a>
-                                        </li>
+                        
                                         <!--<li class="nav-item">
         <a class="nav-link" href="#">Contact</a>
       </li>-->
