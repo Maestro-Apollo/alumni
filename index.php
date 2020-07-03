@@ -60,14 +60,9 @@
                                         </li>
 
                                         <li class="nav-item">
-<<<<<<< HEAD
                                             <a class="nav-link" href="gallery.html"> Gallery </a>
                                         </li>
 
-=======
-                                           <a class="nav-link" href="gallery.php" > Gallery </a>
-                                        </li> 
->>>>>>> 951d995a1af9337fd563e149cbc77ba96846e7db
 
 
                                         <li class="nav-item">
