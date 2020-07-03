@@ -34,7 +34,7 @@
                 <div class="carousel-inner">
                     <!--preMenu section starts-->
 
-                    
+
 
                     <!--preMenu section ends-->
 
@@ -60,10 +60,10 @@
                                         </li>
 
                                         <li class="nav-item">
-                                           <a class="nav-link" href="gallery.html" > Gallery </a>
-                                        </li> 
+                                            <a class="nav-link" href="gallery.html"> Gallery </a>
+                                        </li>
 
-                                        
+
 
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Events</a>
@@ -77,19 +77,19 @@
                                                 role="button" data-toggle="dropdown" aria-haspopup="true"
                                                 aria-expanded="false">Membership</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="pages/login.php">Log In</a>
-                                                <a class="dropdown-item" href="pages/reg.php">Registration</a>
+                                                <a class="dropdown-item" href="login.php">Log In</a>
+                                                <a class="dropdown-item" href="reg.php">Registration</a>
                                             </div>
                                         </li>
 
-                                        
+
                                         <li class="Searchbar">
-                                           
+
                                             <input id="bar" type="text" placeholder="search" />
                                             <a id="searchIcon" href="##"><i class="fab fa-searchengin"></i></a>
-                                            <img src= "image/search.svg" alt= "search-icon">
+                                            <img src="image/search.svg" alt="search-icon">
                                         </li>
-                        
+
                                         <!--<li class="nav-item">
         <a class="nav-link" href="#">Contact</a>
       </li>-->

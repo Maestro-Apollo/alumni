@@ -1,7 +1,45 @@
 <?php
+session_start();
+include('classes/database.php');
+class login extends database
+{
+    protected $link;
+    public function loginFunction()
+    {
+        if (isset($_POST['submit'])) {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $is_valid = 1;
 
-include('../classes/login.php');
+            $sql = "Select * from user where email = '$email' AND is_valid = '$is_valid' ";
+            $res = mysqli_query($this->link, $sql);
+            if (mysqli_num_rows($res) > 0) {
+                $row = mysqli_fetch_assoc($res);
+                $pass = $row['password'];
+                $u_id = $row['id'];
+                $passValid = password_verify($password, $pass);
+                if ($passValid == true) {
 
+                    $_SESSION["user_mail"] = $email;
+                    $_SESSION["user_id"] = $u_id;
+
+
+                    header('location:../pages/profile.php');
+                    return $res;
+                } else {
+                    echo "Wrong password";
+                    return false;
+                }
+            } else {
+                header('location:../pages/reg.php');
+                return false;
+            }
+        }
+        # code...
+    }
+}
+$obj = new login;
+$objLogin = $obj->loginFunction();
 ?>
 
 <!DOCTYPE html>
@@ -15,14 +53,14 @@ include('../classes/login.php');
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 </head>
 
 <body>
-    
+
     <?php
-//    include("../header.php");
+    //    include("../header.php");
     ?>
 
     <div class="container">
@@ -57,7 +95,7 @@ include('../classes/login.php');
                 <div class="col-md-12 col-lg-4">
                     <div class="dk-footer-box-info text-center">
                         <a href="index.html" class="footer-logo text-center">
-                            <img src="../image/logo.png" alt="footer_logo" class="img-fluid w-25 text-center">
+                            <img src="image/logo.png" alt="footer_logo" class="img-fluid w-25 text-center">
                         </a>
                         <p class="footer-info-text text-light">
                             Reference site about Lorem Ipsum, giving information on its origins, as well as a random
