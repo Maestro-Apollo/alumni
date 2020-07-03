@@ -19,13 +19,14 @@
     <a href="image/1.jpg" data-ngThumb="image/1.jpg"></a>
     <a href="image/2.jpg" data-ngThumb="image/2.jpg"></a>
     <a href="image/3.jpg" data-ngThumb="image/3.jpg"></a>
+   
 
     <div id="nanogallery2" data-nanogallery2='{OPTIONS HERE}'>
         <a href="image/1.jpg" data-ngThumb="image/1.jpg"></a>
         <a href="image/2.jpg" data-ngThumb="image/2.jpg"></a>
         <a href="image/3.jpg" data-ngThumb="image/3.jpg"></a>
 
-    </div>
+   </div>
 
     <!-- <div id="nanogallery2">Loading...</div> -->
 
