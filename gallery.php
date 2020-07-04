@@ -6,56 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/gallery.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-    <link href="css/nanogallery2.min.css" rel="stylesheet" />
-    <link href="css/nanogallery2.woff.min.css" rel="stylesheet" />
     <title>Gallery</title>
 </head>
 
 <body>
-    <a href="image/1.jpg" data-ngThumb="image/1.jpg"></a>
-    <a href="image/2.jpg" data-ngThumb="image/2.jpg"></a>
-    <a href="image/3.jpg" data-ngThumb="image/3.jpg"></a>
-   
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h4 class="caption"> Image Caption-1 </h4>
+      <img src="image/1.jpg" alt ="image1 "width="100%" >
+    </div>
+    <div class="col-md-4">
+    <h4> Image Caption-2 </h4>
+    <img src="image/2.jpg" alt ="image2" width="100%" >
+    </div>
+    <div class="col-md-4">
+    <h4> Image Caption-3 </h4>
+    <img src="image/1.jpg" alt ="image3"  width="100%">
+    </div>
+    <div class="col-md-4">
+    <h4> Image Caption-4 </h4>
+    <img src="image/2.jpg" alt ="image4"  width="100%">
+    </div>
+    <div class="col-md-4">
+    <h4> Image Caption-5 </h4>
+    <img src="image/1.jpg" alt ="image5"  width="100%">
+    </div>
+    <div class="col-md-4">
+    <h4> Image Caption-6 </h4>
+    <img src="image/2.jpg" alt ="image6"  width="100%">
+    </div> 
+    <div class="col-md-4">
+    <h4> Image Caption-7 </h4>
+    <img src="image/1.jpg" alt ="image7"  width="100%">
+    </div>
+    <div class="col-md-4">
+    <h4> Image Caption-8 </h4>
+    <img src="image/2.jpg" alt ="image8"  width="100%">
+    </div>
+    <div class="col-md-4">
+    <h4> Image Caption-9 </h4>
+    <img src="image/1.jpg" alt ="image9"  width="100%">
+    </div>
+  </div>
+</div>
 
-    <div id="nanogallery2" data-nanogallery2='{OPTIONS HERE}'>
-        <a href="image/1.jpg" data-ngThumb="image/1.jpg"></a>
-        <a href="image/2.jpg" data-ngThumb="image/2.jpg"></a>
-        <a href="image/3.jpg" data-ngThumb="image/3.jpg"></a>
-
-   </div>
-
-    <!-- <div id="nanogallery2">Loading...</div> -->
 
 
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/simple-lightbox.min.js"></script>
-    <!-- As A jQuery Plugin -->
-    <script src="js/jquery.nanogallery2.core.min.js"></script>
-    <script src="js/jquery.nanogallery2.data_flickr.min.js"></script>
-    <script src="js/jquery.nanogallery2.data_google3.min.js"></script>
-    <script src="js/jquery.nanogallery2.data_nano_photos_provider2.min.js"></script>
-    <script src="js/jquery.nanogallery2.js"></script>
-    <script src="js/jquery.nanogallery2.min.js"></script>
-
-
-    <!-- <script> --
-$("#nanogallery2").nanogallery2( {
-  items: [
-    { src: '1.jpg', srct: 'thumb-1.jpg', title: 'Alt 1' },
-    { src: '2.jpg', srct: 'thumb-2.jpg', title: 'Alt 2' },
-    { src: '3.jpg', srct: 'thumb-3.jpg', title: 'Alt 3' }
-  ]
-});
-</script>
-<!--  -->
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
 
 </body>
 
