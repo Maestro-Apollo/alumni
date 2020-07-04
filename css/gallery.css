@@ -1,14 +1,9 @@
-.row h4 {
-  color: rgb(39, 10, 7);
-  cursor: pointer;
-}
-.row h4:hover {
-  color: blueviolet;
-}
-
 .row img {
-  opacity: 0.6;
+  opacity: 0.8;
   cursor: pointer;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .row img:hover {
