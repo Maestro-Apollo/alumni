@@ -1,1 +1,16 @@
+.row h4 {
+  color: rgb(39, 10, 7);
+  cursor: pointer;
+}
+.row h4:hover {
+  color: blueviolet;
+}
 
+.row img {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.row img:hover {
+  opacity: 1;
+}

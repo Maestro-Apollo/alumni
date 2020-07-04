@@ -16,7 +16,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <h4 class="caption"> Image Caption-1 </h4>
+      <h4> Image Caption-1 </h4>
       <img src="image/1.jpg" alt ="image1 "width="100%" >
     </div>
     <div class="col-md-4">
