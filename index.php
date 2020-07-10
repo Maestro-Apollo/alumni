@@ -43,9 +43,9 @@
 
                     <div class="areaMenu">
                         <section id="nav-bar">
-                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <nav class="navbar navbar-expand-lg">
                                 <a class="navbar-brand" href="#"><img src="image/alumni.png" /></a>
-                                <a class="navbar-brand1 text-dark" style="color: #000 !important;">IIT-JU</a>
+                                <a class="navbar-brand1 text-dark" style="color: #fff !important;">IIT-JU</a>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                                     data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                                     aria-label="Toggle navigation">

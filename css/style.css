@@ -38,7 +38,7 @@
 }
 
 .navbar-nav li a {
-    color: #000 !important;
+    color: #fff !important;
     float: right;
     text-align: left;
 }
@@ -49,6 +49,7 @@
 
 .navbar {
     padding: 0;
+    background-color: #007b5e !important;
     /*
 	background:#fff;
 */
