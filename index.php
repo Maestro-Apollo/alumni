@@ -10,7 +10,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css"
+    
+    
+     />
 
 </head>
 
@@ -22,26 +25,15 @@
 
     <!--menu area-->
     <!--menu area-->
+    
+     <!--<?php include('layout/header.php') ?>-->
+    
+    
 
-    <div class="layover">
-        <div id="slider">
-            <div id="headerSlider" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#headerSlider" data-slide-to="0" class="active"></li>
-                    <li data-target="#headerSlider" data-slide-to="1"></li>
-                    <li data-target="#headerSlider" data-slide-to="2"></li>
-                </ol>
-
-                <div class="carousel-inner">
-                    <!--preMenu section starts-->
-
-
-
-                    <!--preMenu section ends-->
-
-                    <!--placing menu ares-->
-
-                    <div class="areaMenu">
+   
+        <div class="layover">
+            
+    <div class="areaMenu">
                         <section id="nav-bar">
                             <nav class="navbar navbar-expand-lg">
                                 <a class="navbar-brand" href="#"><img src="image/alumni.png" /></a>
@@ -85,14 +77,31 @@
 
 
 
-                                        <!--<li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
-      </li>-->
+         
                                     </ul>
                                 </div>
                             </nav>
                         </section>
                     </div>
+        
+        <div id="slider">
+            <div id="headerSlider" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#headerSlider" data-slide-to="0" class="active"></li>
+                    <li data-target="#headerSlider" data-slide-to="1"></li>
+                    <li data-target="#headerSlider" data-slide-to="2"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <!--preMenu section starts-->
+
+
+
+                    <!--preMenu section ends-->
+
+                    <!--placing menu ares-->
+
+                    
 
                     <!--placing menu ares-->
 

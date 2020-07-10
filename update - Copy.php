@@ -77,9 +77,9 @@
     <div class="container">
         <br>
 
-        <h2>Update Information</h2>
+        <h2 style="margin-left:440px;margin-bottom:30px">Update Profile</h2>
 
-        <form onsubmit="return validation()" method="post" enctype="multipart/form-data">
+        <form style="width:400px; border:solid 1px #007B5E;padding:10px 10px;border-radius:10px;margin-left:360px;margin-bottom:40px" onsubmit="return validation()" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
                 <label>Name</label>
@@ -138,7 +138,7 @@
                     value="<?php echo $row2['current_city']; ?>">
                 <span id="crntCityError" class="text-danger font-wight-bold"></span>
             </div>
-            <input type="submit" id="submitBtn" name="submit" class="btn btn-primary">
+            <input style="background:#007B5E; color:white;margin-left:150px" type="submit" id="submitBtn" name="submit" class="btn btn-primary">
 
         </form>
     </div>
@@ -188,6 +188,11 @@
         }
         /*validation ends*/
     </script>
+    
+    <section>
+        <?php include('layout/footer.php') ?>
+    </section>
+    
 </body>
 
 </html>

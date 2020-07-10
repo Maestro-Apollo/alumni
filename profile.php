@@ -71,7 +71,7 @@
 
 
         <div class="edit_profile">
-            <a class="edit_btn" href="update - Copy.php">Edit Profile</a>
+            <a style="color:white; padding:10px 10px; background:#007B5E; border-radius:10px;text-decoration:none" class="edit_btn" href="update - Copy.php">Edit Profile</a>
         </div>
 
         <!--    creating a div for user image-->
@@ -81,13 +81,13 @@
 
         </div>
         <div class="chngImg">
-            <form method="post" enctype="multipart/form-data">
-                <p>Image:</p>
-                <div class="custom-file mb-3">
-                    <input type="file" class="custom-file-input Imgcng" id="customFile" name="image">
-                    <label class="custom-file-label" for="customFile">Choose New File</label>
+            <form style="width:200px" method="post" enctype="multipart/form-data">
+<!--                <p>Image:</p>-->
+                <div style="margin-left:460px" class="custom-file mb-3">
+                    <input type="file" class="custom-file-input Imgcng" id="customFile" name="image" value="Browse Photo">
+                    <label class="custom-file-label" for="customFile">New Photo</label>
                 </div>
-                <input type="submit" id="submitBtn" name="submit" class="btn btn-primary">
+                <input style="background:#007B5E;margin-left:500px;margin-bottom:30px" type="submit" id="submitBtn" name="submit" class="btn btn-primary" value="Change Image">
             </form>
 
         </div>
@@ -96,21 +96,21 @@
         <div class="user_information">
             <div class="row">
                 <div class="col-md-6 name_batch">
-                    Name - <a href="#"> <?php echo $row2['name']; ?> </a><br>
-                    Batch - <a href="#"> <?php echo $row2['batch']; ?> </a><br>
-                    Current Country - <a href="#"> <?php echo $row2['current_country']; ?> </a><br>
+                    Name - <a style="text-decoration:none;color:black" href="#"> <?php echo $row2['name']; ?> </a><br>
+                    Batch - <a style="text-decoration:none;color:black" href="#"> <?php echo $row2['batch']; ?> </a><br>
+                    Current Country - <a style="text-decoration:none;color:black" href="#"> <?php echo $row2['current_country']; ?> </a><br>
                 </div>
 
                 <div class="col-md-6 institute">
-                    Institute - <a href="#"> Institute name </a><br>
-                    Position - <a href="#"> Position name </a><br>
-                    Current City - <a href="#"> <?php echo $row2['current_city']; ?> </a><br>
+                    Institute - <a style="text-decoration:none;color:black" href="#"> Institute name </a><br>
+                    Position - <a style="text-decoration:none;color:black" href="#"> Position name </a><br>
+                    Current City - <a style="text-decoration:none;color:black" href="#"> <?php echo $row2['current_city']; ?> </a><br>
                 </div>
             </div>
 
             <div class="contact">
-                Phone - <a href="#" class="phone"> <?php echo $row2['phone']; ?> </a>
-                Email - <a href="#" class="mail"> <?php echo $row1['email']; ?> </a>
+                Phone - <a style="text-decoration:none;color:black" href="#" class="phone"> <?php echo $row2['phone']; ?> </a>
+                Email - <a style="text-decoration:none;color:black" href="#" class="mail"> <?php echo $row1['email']; ?> </a>
             </div>
         </div>
 
@@ -118,9 +118,9 @@
 
     </div>
 
-    <div class="container">
+    <div style="margin-top:30px;margin-bottom:30px" class="container">
         <div class="add_more">
-            <a class="more_btn" href="##">Add More</a>
+            <a style="color:white; padding:10px 10px; background:#007B5E; border-radius:10px; text-decoration:none" class="more_btn" href="##">Add More</a>
         </div>
     </div>
 
