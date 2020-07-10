@@ -10,10 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css"
-    
-    
-     />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 </head>
 
@@ -25,117 +22,66 @@
 
     <!--menu area-->
     <!--menu area-->
-    
-     <!--<?php include('layout/header.php') ?>-->
-    
-    
 
-   
-        <div class="layover">
-            
-    <div class="areaMenu">
-                        <section id="nav-bar">
-                            <nav class="navbar navbar-expand-lg">
-                                <a class="navbar-brand" href="#"><img src="image/alumni.png" /></a>
-                                <a class="navbar-brand1 text-dark" style="color: #fff !important;">IIT-JU</a>
-                                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                                    aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="collapse navbar-collapse" id="navbarNav">
-                                    <ul class="navbar-nav ml-auto">
-                                        <li class="nav-item active">
-                                            <a class="nav-link" href="#">Home</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">About</a>
-                                        </li>
+    <section>
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="gallery.php"> Gallery </a>
-                                        </li>
+        <?php include('layout/header.php'); ?>
+    </section>
 
 
-
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Events</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Notice</a>
-                                        </li>
-
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">Membership</a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item text-dark" style="color: #000 !important"
-                                                    href="login.php">Log In</a>
-                                                <a class="dropdown-item" style="color: #000 !important"
-                                                    href="reg.php">Registration</a>
-                                            </div>
-                                        </li>
-
-
-
-         
-                                    </ul>
-                                </div>
-                            </nav>
-                        </section>
-                    </div>
-        
-        <div id="slider">
-            <div id="headerSlider" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#headerSlider" data-slide-to="0" class="active"></li>
-                    <li data-target="#headerSlider" data-slide-to="1"></li>
-                    <li data-target="#headerSlider" data-slide-to="2"></li>
-                </ol>
-
-                <div class="carousel-inner">
-                    <!--preMenu section starts-->
-
-
-
-                    <!--preMenu section ends-->
-
-                    <!--placing menu ares-->
-
-                    
-
-                    <!--placing menu ares-->
-
-                    <div class="carousel-item active">
-                        <img src="image/image1.jpg" class="d-block img-fluid" />
-
-                        <div class="carousel-caption">
-                            <h5>WELCOME To IIT-JU Alumni Association</h5>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="image/image2.jpg" class="d-block img-fluid" />
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="image/image3.jpg" class="d-block img-fluid" />
+    <section>
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="image/image1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </div>
                 </div>
-
-                <a class="carousel-control-prev" href="#headerSlider" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-
-                <a class="carousel-control-next" href="#headerSlider" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="carousel-item">
+                    <img src="image/image2.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/image3.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/image7.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    </div>
+                </div>
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-    </div>
+    </section>
+
+
+
+
+
 
     <!-- Footer -->
     <section id="footer">

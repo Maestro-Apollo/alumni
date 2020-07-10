@@ -14,6 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -73,13 +74,17 @@
 
 
     <!--    creating form-->
-
+    <section>
+        <?php include('layout/header.php'); ?>
+    </section>
     <div class="container">
         <br>
 
         <h2 style="margin-left:440px;margin-bottom:30px">Update Profile</h2>
 
-        <form style="width:400px; border:solid 1px #007B5E;padding:10px 10px;border-radius:10px;margin-left:360px;margin-bottom:40px" onsubmit="return validation()" method="post" enctype="multipart/form-data">
+        <form
+            style="width:400px; border:solid 1px #007B5E;padding:10px 10px;border-radius:10px;margin-left:360px;margin-bottom:40px"
+            onsubmit="return validation()" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
                 <label>Name</label>
@@ -138,10 +143,15 @@
                     value="<?php echo $row2['current_city']; ?>">
                 <span id="crntCityError" class="text-danger font-wight-bold"></span>
             </div>
-            <input style="background:#007B5E; color:white;margin-left:150px" type="submit" id="submitBtn" name="submit" class="btn btn-primary">
+            <input style="background:#007B5E; color:white;margin-left:150px" type="submit" id="submitBtn" name="submit"
+                class="btn btn-primary">
 
         </form>
     </div>
+
+    <section>
+        <?php include('layout/footer.php') ?>
+    </section>
 
     <!--    creating form-->
 
@@ -188,11 +198,9 @@
         }
         /*validation ends*/
     </script>
-    
-    <section>
-        <?php include('layout/footer.php') ?>
-    </section>
-    
+
+
+
 </body>
 
 </html>

@@ -73,90 +73,71 @@ $ObjReg = $obj->resgistrationFunction();
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-    <title>Registration</title>
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-
-
 </head>
 
 <body>
+    <section>
+        <?php include('layout/header.php'); ?>
+    </section>
+    <section>
+        <div class="container">
+            <br>
 
-    <h1 class="text-center bg-dark text-white">Register here!</h1>
+            <form onsubmit="return validation()" method="post" enctype="multipart/form-data">
 
-    <!--form area starts-->
-
-    <div class="container">
-        <br>
-
-        <form onsubmit="return validation()" method="post" enctype="multipart/form-data">
-
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text" id="name" name="name" class="form-control">
-                <span id="nameError" class="text-danger font-wight-bold"></span>
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Batch</label>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="name" name="name" class="form-control">
+                    <span id="nameError" class="text-danger font-wight-bold"></span>
                 </div>
 
-                <select class="custom-select" name="batch" id="inputGroupSelect01">
-                    <option selected disabled>Your batch number...</option>
-                    <option value="39">39</option>
-                    <option value="40">40</option>
-                    <option value="41">41</option>
-                    <option value="42">42</option>
-                    <option value="43">43</option>
-                </select>
-            </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Batch</label>
+                    </div>
 
-            <div class="form-group">
-                <label>Email</label>
-                <input type="text" id="email" name="email" class="form-control">
-                <span id="emailError" class="text-danger font-wight-bold"></span>
-            </div>
+                    <select class="custom-select" name="batch" id="inputGroupSelect01">
+                        <option selected disabled>Your batch number...</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label>Phone Number</label>
-                <input type="text" id="phoneNumber" name="phone" class="form-control">
-                <span id="phoneNoError" class="text-danger font-wight-bold"></span>
-            </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" id="email" name="email" class="form-control">
+                    <span id="emailError" class="text-danger font-wight-bold"></span>
+                </div>
 
-            <div class="form-group">
-                <label>Current Country</label>
-                <input type="text" id="currentCountry" name="country" class="form-control">
-                <span id="crntCountryError" class="text-danger font-wight-bold"></span>
-            </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" id="phoneNumber" name="phone" class="form-control">
+                    <span id="phoneNoError" class="text-danger font-wight-bold"></span>
+                </div>
 
-            <div class="form-group">
-                <label>Current City</label>
-                <input type="text" id="currentCity" name="city" class="form-control">
-                <span id="crntCityError" class="text-danger font-wight-bold"></span>
-            </div>
+                <div class="form-group">
+                    <label>Current Country</label>
+                    <input type="text" id="currentCountry" name="country" class="form-control">
+                    <span id="crntCountryError" class="text-danger font-wight-bold"></span>
+                </div>
 
-            <!--no need for now-->
-            <!--<div class="form-group">
+                <div class="form-group">
+                    <label>Current City</label>
+                    <input type="text" id="currentCity" name="city" class="form-control">
+                    <span id="crntCityError" class="text-danger font-wight-bold"></span>
+                </div>
+
+                <!--no need for now-->
+                <!--<div class="form-group">
                     <label>Current Institution</label>
                     <input type="text" id="institute" name="" class="form-control">
                     <span id="instituteError" class="text-danger font-wight-bold"></span>
@@ -167,42 +148,52 @@ $ObjReg = $obj->resgistrationFunction();
                     <input type="text" id="position" name="" class="form-control">
                     <span id="positionError" class="text-danger font-wight-bold"></span>
                 </div>-->
-            <!--no need for now-->
+                <!--no need for now-->
 
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" id="password" name="password" class="form-control">
-                <span id="passwordError" class="text-danger font-wight-bold"></span>
-            </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" name="password" class="form-control">
+                    <span id="passwordError" class="text-danger font-wight-bold"></span>
+                </div>
 
-            <div class="form-group">
-                <label>Confirm Password</label>
-                <input type="password" id="cnfPassword" name="" class="form-control">
-                <span id="cnfPassError" class="text-danger font-wight-bold"></span>
-            </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="cnfPassword" name="" class="form-control">
+                    <span id="cnfPassError" class="text-danger font-wight-bold"></span>
+                </div>
 
-            <p>Image:</p>
-            <div class="custom-file mb-3">
-                <input type="file" class="custom-file-input" id="customFile" name="image" required>
-                <label class="custom-file-label" for="customFile">Choose file</label>
-                <!--<div class="valid-feedback">Valid.</div>
+                <p>Image:</p>
+                <div class="custom-file mb-3">
+                    <input type="file" class="custom-file-input" id="customFile" name="image" required>
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                    <!--<div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">Please fill out this field.</div>-->
-            </div>
+                </div>
 
-            <input type="submit" id="submitBtn" name="submit" class="btn btn-primary">
+                <input type="submit" value="CONFIRM" id="submitBtn" name="submit" class="btn btn-success mb-4">
 
-        </form>
+            </form>
 
-    </div>
+        </div>
+    </section>
 
-    <!--form area ends-->
+
     <section>
-        <?php include('layout/footer.php') ?>
+        <?php include('layout/footer.php'); ?>
     </section>
 
 
 
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
     <script type="text/javascript">
     function validation() {
         /*receiving input value from user*/
@@ -322,7 +313,6 @@ $ObjReg = $obj->resgistrationFunction();
         /*validation ends*/
     }
     </script>
-
 </body>
 
 </html>
