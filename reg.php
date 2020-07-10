@@ -122,7 +122,7 @@ $ObjReg = $obj->resgistrationFunction();
                 </div>
 
                 <select class="custom-select" name="batch" id="inputGroupSelect01">
-                    <option disabled>Your batch number...</option>
+                    <option selected disabled>Your batch number...</option>
                     <option value="39">39</option>
                     <option value="40">40</option>
                     <option value="41">41</option>
