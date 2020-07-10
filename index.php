@@ -70,8 +70,10 @@
                                                 role="button" data-toggle="dropdown" aria-haspopup="true"
                                                 aria-expanded="false">Membership</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="login.php">Log In</a>
-                                                <a class="dropdown-item" href="reg.php">Registration</a>
+                                                <a class="dropdown-item text-dark" style="color: #000 !important"
+                                                    href="login.php">Log In</a>
+                                                <a class="dropdown-item" style="color: #000 !important"
+                                                    href="reg.php">Registration</a>
                                             </div>
                                         </li>
 
