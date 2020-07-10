@@ -1,15 +1,17 @@
-body{
-    background-color: lavender ;
+body {
+    background-color: rgb(225, 203, 228);
 }
-img{
+
+img {
     width: 100%;
     padding: 30px;
 }
-.left div{
+
+.left-div {
     background-color: white;
     margin-top: 80px;
-    
 }
-.right div{
-    
+
+.right-div {
+    margin-top: 80px;
 }
