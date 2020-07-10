@@ -15,6 +15,14 @@
     background-color: #007b5e;
 }
 
+.dropdown-menu .dropdown-item {
+    transition: 0.7s;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #09c297 !important;
+}
+
 .navbar-nav li {
     padding: 0 10px;
 }
@@ -22,10 +30,13 @@
 .navbar-nav li a {
     color: #ffffff !important;
     font-weight: bold;
+    border: 2px solid #007b5e;
+    transition: 0.7s;
 }
 
 .navbar-nav li a:hover {
     background-color: #007b5e !important;
+    border-bottom: 2px solid #09c297;
 }
 
 .carousel-item:after {
