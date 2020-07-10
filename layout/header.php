@@ -29,6 +29,7 @@
                         <a class="dropdown-item" href="login.php">Log In</a>
                         <a class="dropdown-item" href="reg.php">Registration</a>
 
+
                     </div>
                 </li>
 
