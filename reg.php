@@ -88,8 +88,8 @@ $ObjReg = $obj->resgistrationFunction();
     <section>
         <div class="container">
             <br>
-
-            <form onsubmit="return validation()" method="post" enctype="multipart/form-data">
+            <h3 style="margin-left:500px;margin-top:10px;margin-bottom:20px">Register Here</h3>
+            <form style="width:460px ;border:solid 1px #007B5E;padding:0px 10px;border-radius:10px;margin-bottom:30px;margin-left:360px" onsubmit="return validation()" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label>Name</label>
@@ -170,7 +170,7 @@ $ObjReg = $obj->resgistrationFunction();
                     <div class="invalid-feedback">Please fill out this field.</div>-->
                 </div>
 
-                <input type="submit" value="CONFIRM" id="submitBtn" name="submit" class="btn btn-success mb-4">
+                <input style="margin-left:165px" type="submit" value="CONFIRM" id="submitBtn" name="submit" class="btn btn-success mb-4">
 
             </form>
 
