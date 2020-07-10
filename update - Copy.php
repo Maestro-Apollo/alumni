@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,65 +18,65 @@
 </head>
 
 <body>
-  
+
     <?php
-        session_start();    
-        /*session variable that holds user's mail and id*/
-        $uMail = $_SESSION["user_mail"];
-        $uId =  $_SESSION["user_id"];
+    session_start();
+    /*session variable that holds user's mail and id*/
+    $uMail = $_SESSION["user_mail"];
+    $uId =  $_SESSION["user_id"];
 
-        /*defining variabes for database connection*/
-            $hostname = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "alumni";
-            $link = mysqli_connect($hostname, $username, $password, $dbname);
+    /*defining variabes for database connection*/
+    $hostname = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "alumni";
+    $link = mysqli_connect($hostname, $username, $password, $dbname);
 
-        /*fetching from user table*/
-            $sql1 = "Select * from user where email = '$uMail' ";
-            $resEmail = mysqli_query($link, $sql1);
+    /*fetching from user table*/
+    $sql1 = "Select * from user where email = '$uMail' ";
+    $resEmail = mysqli_query($link, $sql1);
 
-        /*fetching from user_info table*/
-            $sql2 = "Select * from user_info where user_id = '$uId' ";
-            $resID = mysqli_query($link, $sql2);
+    /*fetching from user_info table*/
+    $sql2 = "Select * from user_info where user_id = '$uId' ";
+    $resID = mysqli_query($link, $sql2);
 
-        /*values are fetched and are in the row1 and row2 arrays*/
-            $row1 = mysqli_fetch_assoc($resEmail);
-            $row2 = mysqli_fetch_assoc($resID);
+    /*values are fetched and are in the row1 and row2 arrays*/
+    $row1 = mysqli_fetch_assoc($resEmail);
+    $row2 = mysqli_fetch_assoc($resID);
 
-        /*update starts here*/
+    /*update starts here*/
 
-            if (isset($_POST['submit'])){          
-                $name = $_POST['name'];
-                $batch = $_POST['batch'];
-//                $email = $_POST['email'];
-                $phone = $_POST['phone'];
-                $country = $_POST['country'];
-                $city = $_POST['city'];
+    if (isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $batch = $_POST['batch'];
+        //                $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $country = $_POST['country'];
+        $city = $_POST['city'];
 
-//                $userTableUp = "UPDATE user SET email = '$email' WHERE id = '$uId'";
-                $userInoUo = "UPDATE user_info SET batch = '$batch]', name = '$name',phone = '$phone',current_country = '$country',current_city = '$city' WHERE user_id='$uId'";
+        //                $userTableUp = "UPDATE user SET email = '$email' WHERE id = '$uId'";
+        $userInoUo = "UPDATE user_info SET batch = '$batch]', name = '$name',phone = '$phone',current_country = '$country',current_city = '$city' WHERE user_id='$uId'";
 
-                $up2 = mysqli_query($link,$userInoUo);
-                $up1 = mysqli_query($link,$userTableUp);
+        $up2 = mysqli_query($link, $userInoUo);
+        $up1 = mysqli_query($link, $userTableUp);
 
-                $_SESSION["user_mail"] = $uMail;
-                $_SESSION["user_id"] = $uId;
+        $_SESSION["user_mail"] = $uMail;
+        $_SESSION["user_id"] = $uId;
 
-                header("location:profile.php");          
-            }
-        /*update ends here*/  
-     ?>
-   
-   
+        header("location:profile.php");
+    }
+    /*update ends here*/
+    ?>
 
-    
-            
-<!--    creating form-->
 
-<div class="container">
+
+
+
+    <!--    creating form-->
+
+    <div class="container">
         <br>
-        
+
         <h2>Update Information</h2>
 
         <form onsubmit="return validation()" method="post" enctype="multipart/form-data">
@@ -94,13 +92,23 @@
                     <label class="input-group-text" for="inputGroupSelect01">Batch</label>
                 </div>
 
-                <select class="custom-select" name="batch"  value="<?php echo $row2['batch']; ?>">
+                <select class="custom-select" name="batch">
                     <option disabled>Your batch number...</option>
-                    <option value="39">39</option>
-                    <option value="40">40</option>
-                    <option value="41">41</option>
-                    <option value="42">42</option>
-                    <option value="43">43</option>
+                    <option value="39" <?php if ($row2['batch'] == 39) {
+                                            echo "selected";
+                                        } ?>>39</option>
+                    <option value="40" <?php if ($row2['batch'] == 40) {
+                                            echo "selected";
+                                        } ?>>40</option>
+                    <option value="41" <?php if ($row2['batch'] == 41) {
+                                            echo "selected";
+                                        } ?>>41</option>
+                    <option value="42" <?php if ($row2['batch'] == 42) {
+                                            echo "selected";
+                                        } ?>>42</option>
+                    <option value="43" <?php if ($row2['batch'] == 43) {
+                                            echo "selected";
+                                        } ?>>43</option>
                 </select>
             </div>
 
@@ -112,19 +120,22 @@
 
             <div class="form-group">
                 <label>Phone Number</label>
-                <input type="text" id="phoneNumber" name="phone" class="form-control" value="<?php echo $row2['phone']; ?>">
+                <input type="text" id="phoneNumber" name="phone" class="form-control"
+                    value="<?php echo $row2['phone']; ?>">
                 <span id="phoneNoError" class="text-danger font-wight-bold"></span>
             </div>
 
             <div class="form-group">
                 <label>Current Country</label>
-                <input type="text" id="currentCountry" name="country" class="form-control" value="<?php echo $row2['current_country']; ?>">
+                <input type="text" id="currentCountry" name="country" class="form-control"
+                    value="<?php echo $row2['current_country']; ?>">
                 <span id="crntCountryError" class="text-danger font-wight-bold"></span>
             </div>
 
             <div class="form-group">
                 <label>Current City</label>
-                <input type="text" id="currentCity" name="city" class="form-control" value="<?php echo $row2['current_city']; ?>">
+                <input type="text" id="currentCity" name="city" class="form-control"
+                    value="<?php echo $row2['current_city']; ?>">
                 <span id="crntCityError" class="text-danger font-wight-bold"></span>
             </div>
             <input type="submit" id="submitBtn" name="submit" class="btn btn-primary">
@@ -132,11 +143,10 @@
         </form>
     </div>
 
-<!--    creating form-->
-     
-   <script>
-       
-       function validation() {
+    <!--    creating form-->
+
+    <script>
+    function validation() {
         /*receiving input value from user*/
         var name = document.getElementById('name').value;
         var email = document.getElementById('email').value;
@@ -146,7 +156,7 @@
         /*receiving user innputs*/
 
         /*assigning regular expressions*/
-        var nameCheck = /^[A-Za-z. ]{3,30}$/;       
+        var nameCheck = /^[A-Za-z. ]{3,30}$/;
         var emailCheck = /^[A-Za-z_0-9]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
         var mobileCheck = /^[0-9]{11}$/;
         var crntCountryCheck = /^[A-Z]{1}[A-Za-z. ]$/;
@@ -175,9 +185,9 @@
         } else {
             document.getElementById('phoneNoError').innerHTML = "** Phone number starts with 01 and length=11";
             return false;
-        }       
+        }
         /*validation ends*/
-
-    </script>  
+    </script>
 </body>
+
 </html>

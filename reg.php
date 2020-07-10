@@ -94,6 +94,7 @@ $ObjReg = $obj->resgistrationFunction();
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="css/style.css">
 
 
 </head>
@@ -195,6 +196,9 @@ $ObjReg = $obj->resgistrationFunction();
     </div>
 
     <!--form area ends-->
+    <section>
+        <?php include('layout/footer.php') ?>
+    </section>
 
 
 
