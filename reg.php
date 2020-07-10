@@ -18,7 +18,7 @@ class resgistration extends database
             $is_valid = 0;
             $password = $_POST['password'];
             $image = time() . '_' . $_FILES['image']['name'];
-            $target = '../user_img/' . $image;
+            $target = 'user_img/' . $image;
 
             $pass = password_hash("$password", PASSWORD_DEFAULT);
 

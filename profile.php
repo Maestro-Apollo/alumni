@@ -44,7 +44,23 @@
     /*values are fetched and are in the row1 and row2 arrays*/
         $row1 = mysqli_fetch_assoc($resEmail);
         $row2 = mysqli_fetch_assoc($resID);
-   
+    
+    
+    /*image update starts*/
+    
+        if (isset($_POST['submit'])) {
+            $image = time() . '_' . $_FILES['image']['name'];
+            $target = 'user_img/' . $image;
+            
+            move_uploaded_file($_FILES['image']['tmp_name'], $target);
+            
+            $userInoUo = "UPDATE user_info SET image = '$image' WHERE user_id='$uId'";
+
+            $up2 = mysqli_query($link,$userInoUo);
+            header("location:profile.php"); 
+//            $up1 = mysqli_query($link,$userTableUp);
+        }
+   /*image update ends*/
     ?>
     
     
@@ -54,14 +70,25 @@
        
        
        <div class="edit_profile">
-           <a class="edit_btn" href="../classes/update - Copy.php">Edit Profile</a>
+           <a class="edit_btn" href="update - Copy.php">Edit Profile</a>
        </div>
     
 <!--    creating a div for user image-->
        <div class="image_area">
        
-           <img class="user_image" src="../user_img/<?php echo $row2['image']; ?>">
+           <img class="user_image" src="user_img/<?php echo $row2['image']; ?>">
        
+       </div>
+       <div class="chngImg">
+          <form  method="post" enctype="multipart/form-data">
+               <p>Image:</p>
+                <div class="custom-file mb-3">
+                    <input type="file" class="custom-file-input Imgcng" id="customFile" name="image">
+                    <label class="custom-file-label" for="customFile">Choose New File</label>
+                </div>
+                <input type="submit" id="submitBtn" name="submit" class="btn btn-primary">
+           </form>
+          
        </div>
        
         

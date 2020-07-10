@@ -24,14 +24,14 @@ class login extends database
                     $_SESSION["user_id"] = $u_id;
 
 
-                    header('location:../pages/profile.php');
+                    header('location:profile.php');
                     return $res;
                 } else {
                     echo "Wrong password";
                     return false;
                 }
             } else {
-                header('location:../pages/reg.php');
+                header('location:reg.php');
                 return false;
             }
         }

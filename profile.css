@@ -1,0 +1,31 @@
+.image_area{
+    height: 200px;
+    text-align: center;
+    margin-bottom: 130px;
+}
+
+.user_image{
+    border-radius: 50%;
+}
+
+.user_information{
+    border: 1px solid black;
+    border-radius: 13px;
+    padding: 5px 0;
+    padding-left: 5px;
+}
+.phone{
+    padding-left: 10px;
+    padding-right: 395px;
+}
+.add_more{
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.main_info_area{
+    margin-top: 30px;
+}
+.Imgcng{
+    width: 30px;
+}
