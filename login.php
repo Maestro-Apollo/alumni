@@ -56,7 +56,7 @@ $objLogin = $obj->loginFunction();
     <!--    <link rel="stylesheet" href="css/stylelog.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/animate.css">
 </head>
 
 <body>
@@ -66,7 +66,7 @@ $objLogin = $obj->loginFunction();
         <?php include('layout/header.php'); ?>
     </section>
 
-    <div class="container">
+    <div class="container wow fadeInUp">
         <h2 style="margin:30px 0px;padding-left:470px">Login Here</h2>
         <form style="border:solid 1px #007B5E; width:400px; border-radius:15px;margin:20px 0px;margin-left:350px"
             class="needs-validation" method="post" novalidate>
@@ -100,8 +100,10 @@ $objLogin = $obj->loginFunction();
     </section>
 
     <!-- ./Footer -->
-
-
+    <script src="js/wow.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <script>
     // Disable form submissions if there are invalid fields
     (function() {

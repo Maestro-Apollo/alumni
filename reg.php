@@ -79,6 +79,7 @@ $ObjReg = $obj->resgistrationFunction();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
 </head>
 
 <body>
@@ -86,10 +87,12 @@ $ObjReg = $obj->resgistrationFunction();
         <?php include('layout/header.php'); ?>
     </section>
     <section>
-        <div class="container">
+        <div class="container wow fadeInUp">
             <br>
             <h3 style="margin-left:500px;margin-top:10px;margin-bottom:20px">Register Here</h3>
-            <form style="width:460px ;border:solid 1px #007B5E;padding:0px 10px;border-radius:10px;margin-bottom:30px;margin-left:360px" onsubmit="return validation()" method="post" enctype="multipart/form-data">
+            <form
+                style="width:460px ;border:solid 1px #007B5E;padding:0px 10px;border-radius:10px;margin-bottom:30px;margin-left:360px"
+                onsubmit="return validation()" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label>Name</label>
@@ -170,7 +173,8 @@ $ObjReg = $obj->resgistrationFunction();
                     <div class="invalid-feedback">Please fill out this field.</div>-->
                 </div>
 
-                <input style="margin-left:165px" type="submit" value="CONFIRM" id="submitBtn" name="submit" class="btn btn-success mb-4">
+                <input style="margin-left:165px" type="submit" value="CONFIRM" id="submitBtn" name="submit"
+                    class="btn btn-success mb-4">
 
             </form>
 
@@ -193,6 +197,10 @@ $ObjReg = $obj->resgistrationFunction();
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <script src="js/wow.js"></script>
+    <script>
+    new WOW().init();
     </script>
     <script type="text/javascript">
     function validation() {
