@@ -37,7 +37,7 @@
 
     
     /*feteching job information*/
-    $sql = "Select * from news";
+    $sql = "Select * from news ORDER BY date DESC";
     $newsInfo = mysqli_query($link, $sql);
 
 
