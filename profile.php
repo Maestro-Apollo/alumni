@@ -41,12 +41,16 @@
     /*fetching from user_info table*/
     $sql2 = "Select * from user_info where user_id = '$uId' ";
     $resID = mysqli_query($link, $sql2);
+    
+    /*feteching job information*/
+    $sql3 = "Select * from user_career where user_id = '$uId' ";
+    $resCareer = mysqli_query($link, $sql3);
 
     /*values are fetched and are in the row1 and row2 arrays*/
     $row1 = mysqli_fetch_assoc($resEmail);
     $row2 = mysqli_fetch_assoc($resID);
 
-
+    
     /*image update starts*/
 
     if (isset($_POST['submit'])) {
@@ -59,7 +63,6 @@
 
         $up2 = mysqli_query($link, $userInoUo);
         header("location:profile.php");
-        //            $up1 = mysqli_query($link,$userTableUp);
     }
     /*image update ends*/
     ?>
@@ -72,7 +75,6 @@
     <!--creating div for other information-->
     <div class="container main_info_area">
 
-
         <div class="edit_profile">
             <a style="color:white; padding:10px 10px; background:#007B5E; border-radius:10px;text-decoration:none"
                 class="edit_btn" href="update - Copy.php">Edit Profile</a>
@@ -80,10 +82,9 @@
 
         <!--    creating a div for user image-->
         <div class="image_area">
-
             <img class="user_image" src="user_img/<?php echo $row2['image']; ?>">
-
         </div>
+        
         <div class="chngImg">
             <form style="width:200px" method="post" enctype="multipart/form-data">
                 <!--                <p>Image:</p>-->
@@ -97,7 +98,6 @@
             </form>
 
         </div>
-
 
         <div class="user_information">
             <div class="row">
@@ -123,15 +123,56 @@
                 </a>
             </div>
         </div>
-
-
-
     </div>
+    
+    
+    <!--another area for career information-->
+    
+     <!--creating div for other information-->
+     
+     <?php
+            if($resCareer){   
+                ?>
+                
+                <h2 style="margin-left:580px; margin-top:20px;">Previous Jobs</h2>
+                
+                <?php
+                while($row = mysqli_fetch_row($resCareer)){
+                    
+                    $ins = $row[2];
+                    $pos = $row[3];
+                    $j_date = $row[4];
+                    $e_date = $row[5];
+                    ?>
+
+                    <div class="container main_info_area">
+                        <div class="user_information">
+                            <div class="row">
+                                <div class="col-md-6 name_batch">
+                                    Institute - <a style="text-decoration:none;color:black" href="#"> <?php  echo $ins; ?> </a><br>
+                                    Position - <a style="text-decoration:none;color:black" href="#"> <?php  echo $pos; ?> </a><br>
+                                </div>
+
+                                <div class="col-md-6 institute">
+                                    Joining date - <a style="text-decoration:none;color:black" href="#"> <?php  echo $j_date; ?> </a><br>
+                                    Ending date - <a style="text-decoration:none;color:black" href="#"> <?php  echo $e_date; ?> </a><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <?php
+                }
+            }
+        
+            ?>
+ 
+    
+    <!--another area for career information-->
 
     <div style="margin-top:30px;margin-bottom:30px" class="container">
         <div class="add_more">
             <a style="color:white; padding:10px 10px; background:#007B5E; border-radius:10px; text-decoration:none"
-                class="more_btn" href="##">Add More</a>
+                class="more_btn" href="add_More.php">Add More</a>
         </div>
     </div>
 
