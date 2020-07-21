@@ -45,6 +45,10 @@
     /*feteching job information*/
     $sql3 = "Select * from user_career where user_id = '$uId' ";
     $resCareer = mysqli_query($link, $sql3);
+    
+    /*fetching publication information*/
+    $sql4 = "Select * from publications where user_id = '$uId' ";
+    $resPublication = mysqli_query($link, $sql4);
 
     /*values are fetched and are in the row1 and row2 arrays*/
     $row1 = mysqli_fetch_assoc($resEmail);
@@ -168,6 +172,44 @@
  
     
     <!--another area for career information-->
+    
+    <!--Research Publication area starts-->
+      <?php
+            if($resPublication){   
+                ?>
+                
+                <h2 style="margin-left:580px; margin-top:20px;">Previous Jobs</h2>
+                
+                <?php
+                while($row1 = mysqli_fetch_row($resPublication)){
+                    
+                    $title = $row1[2];
+                    $link = $row1[3];
+                    $date = $row1[4];
+                    ?>
+
+                    <div class="container main_info_area">
+                        <div class="user_information">
+                            <div class="row">
+                                <div class="col-md-6 name_batch">
+                                    Title - <a style="text-decoration:none;color:black" href="#"> <?php  echo $title; ?> </a><br>
+                                    Link - <a style="text-decoration:none;color:black" href="#"> <?php  echo $link; ?> </a><br>
+                                </div>
+
+                                <div class="col-md-6 institute">
+                                    Publication date - <a style="text-decoration:none;color:black" href="#"> <?php  echo $date; ?> </a><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <?php
+                }
+            }
+        
+            ?>
+            <!--Research Publication Area Ends-->
+    
+    
 
     <div style="margin-top:30px;margin-bottom:30px" class="container">
         <div class="add_more">
@@ -177,6 +219,10 @@
         <div class="add_more">
             <a style="color:white; padding:10px 10px; background:#007B5E; border-radius:10px; text-decoration:none"
                 class="more_btn" href="change_Pass.php">Change Password</a>
+        </div>
+        <div class="add_more">
+            <a style="color:white; padding:10px 10px; background:#007B5E; border-radius:10px; text-decoration:none"
+                class="more_btn" href="add_Publications.php">Add Publications</a>
         </div>
     </div>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2020 at 08:27 AM
+-- Generation Time: Jul 21, 2020 at 12:02 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -68,12 +68,31 @@ CREATE TABLE `fund` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `job_offer`
+--
+
+CREATE TABLE `job_offer` (
+  `id` int(6) NOT NULL,
+  `user_id` int(6) NOT NULL,
+  `title` varchar(256) NOT NULL,
+  `position` varchar(256) NOT NULL,
+  `requirements` text NOT NULL,
+  `salary` int(7) NOT NULL,
+  `institute` varchar(256) NOT NULL,
+  `description` text NOT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `news`
 --
 
 CREATE TABLE `news` (
   `id` int(11) NOT NULL,
-  `details` longtext DEFAULT NULL,
+  `details` mediumtext NOT NULL,
   `headline` text NOT NULL,
   `date` date NOT NULL,
   `image` varchar(255) DEFAULT NULL,
@@ -89,7 +108,26 @@ INSERT INTO `news` (`id`, `details`, `headline`, `date`, `image`, `created`, `up
 (1, 'Hello World of JU!', 'JU Opening', '2020-07-17', '1594965259_yoyo.jpg', NULL, NULL),
 (2, 'Hello World of DU!', 'DU Opening', '2020-07-17', '1594966782_yoyo.jpg', NULL, NULL),
 (3, 'Hello World of DU!', 'DU Opening', '2020-07-17', '1594966791_yoyo.jpg', NULL, NULL),
-(4, ' Lorem Ipsum is simply ', 'JnU Opening', '2020-07-17', '1594966854_yoyo.jpg', NULL, NULL);
+(4, ' Lorem Ipsum is simply ', 'JnU Opening', '2020-07-17', '1594966854_yoyo.jpg', NULL, NULL),
+(5, 'yo yo yo  yo yo yo ', 'SUST Opening', '2019-06-15', '1594981925_yoyo.jpg', NULL, NULL),
+(6, 'you you you  you yuo yuo ', 'DUST Opening', '2020-06-15', '1594982058_yoyo.jpg', NULL, NULL),
+(7, 'metimes by accident, sometimes on purpose (injected humour and the like).', 'MGHS', '2020-07-18', '1595067148_yoyo.jpg', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `publications`
+--
+
+CREATE TABLE `publications` (
+  `id` int(6) NOT NULL,
+  `user_id` int(6) NOT NULL,
+  `title` text NOT NULL,
+  `link` varchar(256) NOT NULL,
+  `date` date NOT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -113,7 +151,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `email`, `password`, `token`, `is_valid`, `created`, `updated`) VALUES
 (7, 'rafimahafid@gmail.com', '$2y$10$aMuqPuoJEkQojJnarpBHS.ruB3IZZfunpMJQDeSFGvauJqKCEF.VS', NULL, 1, NULL, NULL),
-(8, 'noyondey8@gmail.com', '$2y$10$RKGfFPOsyGhfrPmCRi8u1O07JUaVDrr.srB0QDkL1ZB5wM4WsRBu.', NULL, 0, NULL, NULL),
+(8, 'noyondey8@gmail.com', '$2y$10$RKGfFPOsyGhfrPmCRi8u1O07JUaVDrr.srB0QDkL1ZB5wM4WsRBu.', NULL, 1, NULL, NULL),
 (9, 'noyondeyiit07@gmail.com', '$2y$10$DTFJR8crx2FhBDzRECINVOGWksU17V4h3YUPi7xjfuY9LNHfkIYjG', NULL, 1, NULL, NULL),
 (26, 'yes@gmail.com', '$2y$10$HCeAh2D19cLWZHlmz0C17eYjexbXZEyCrBWs3Vmtp9RYopC6D68ry', NULL, NULL, NULL, NULL),
 (28, '', '$2y$10$UWM966eBc07uaNr3abFs5uVpf8svh0lsnJ9sCtAGNZMPvctfT2.wS', NULL, NULL, NULL, NULL),
@@ -122,19 +160,18 @@ INSERT INTO `user` (`id`, `email`, `password`, `token`, `is_valid`, `created`, `
 (36, 'happy@gmail.com', '$2y$10$BYyVLCrKnViWeljZLjApOuy/PPXI2U94I9xE4/T/fnGM1f6rPGSWe', NULL, NULL, NULL, NULL),
 (37, 'sandy31@gmail.com', '$2y$10$li1AtmcbS6Bjsv0DtJfwWedEtaz7yIQLEd4juI4H.h5eSkGBRHGYS', NULL, NULL, NULL, NULL),
 (38, 'josh41@gmail.com', '$2y$10$SYF.jOVTDzLq//g9foj.Deh2s3Q8i9sUXIu1Qcc.BhYQ1w4agzuJS', NULL, NULL, NULL, NULL),
-(39, 'stive@gmail.com', '$2y$10$yfwuo.uEyOhjRNCQ.Cz/DuvQlLwx8w4GTm17mOkE3bAKJq8GiyeWq', NULL, NULL, NULL, NULL),
-(40, 'jogr31@gmail.com', '$2y$10$zXjDP0j4EkXswz0kS9Sf7uq/W5q1JEf64lvTBXF..WZVDFBplbxF2', NULL, NULL, NULL, NULL),
 (41, 'keya8@gmail.com', '$2y$10$yQA1s4ApFuMADSvi0Sw1n.VLC27JqwoAN3DWram.ICPPUhFJaCCpa', NULL, NULL, NULL, NULL),
 (42, 'go31@gmail.com', '$2y$10$Wol0Oqjb7SduLcrwPlqYSurt5ymgcUgVum4GoJplrwqG4MbMwphp6', NULL, 1, NULL, NULL),
 (43, 'yellow@gmail.com', '$2y$10$Z5P0Kkh.NHKBiExpyWCtlO5QQ.Bgw5AC43MkS.knK6vWTeYbjbSe6', NULL, 1, NULL, NULL),
 (44, 'rakib@gmail.com', '$2y$10$JqoxORo1k2r4rS7eDOeRX.R4mrAxCiUCCt6oDIFcfU7tY0UaC6iUu', NULL, 1, NULL, NULL),
 (45, 'sagor@gmail.com', '$2y$10$hBTISGNWUIoBCYTo6iSyceuRdiGRklPIrn.6aQ1GgCxpMi5wzaSCe', NULL, 1, NULL, NULL),
 (46, 'nonny8@gmail.com', '$2y$10$o3KCF3TKGUnu10Kt2m37H.RmgDrx0fRoARXDZbEjreqImDQzpfCD.', NULL, 1, NULL, NULL),
-(47, 'yop@gmail.com', '$2y$10$bQCC2AEt/ZdkIyav3aL96OuhsDlPabgVYlHQz/zdjEroYbAYNW8NK', NULL, 0, NULL, NULL),
-(48, '', '$2y$10$2Q24GYeUzfN3O2uPQYUhDuBLnFKNrgHzV7.25Bo3tWUw4v8gfxpfW', NULL, 1, NULL, NULL),
-(49, '', '$2y$10$Ei/B/9Zu9zsaPBmeslADW.FDfHBbNkEzhBzZVDPP4eogBbIT2jhQa', NULL, 1, NULL, NULL),
-(50, 'gouri@gmail.com', '$2y$10$4/k.6POhkTkKto932WiqeuADRXexCXPhNuWuHdFluUUaId/tFWlre', NULL, 1, NULL, NULL),
-(51, 'tomh@gmail.com', '$2y$10$LGU4Giwv7e5fr..spoe7IuOkBKGWRmB2A7.S8BcAT4RbIYgaefgEW', NULL, 1, NULL, NULL);
+(50, 'gouri@gmail.com', '$2y$10$fmhEllYPH95XO2Jl80YoROs7k12ERKOXs.sawdi8bDsRs1sXwZeoq', NULL, 1, NULL, NULL),
+(51, 'tomh@gmail.com', '$2y$10$LGU4Giwv7e5fr..spoe7IuOkBKGWRmB2A7.S8BcAT4RbIYgaefgEW', NULL, 1, NULL, NULL),
+(52, 'urmi@gmail.com', '$2y$10$UOgL3gvThax4Q3SnikeJo.WVTadfvLRSOjViD2hNsp28HS9dTZ2XS', NULL, 1, NULL, NULL),
+(53, 'dey@gmail.com', '$2y$10$hjV8Ah6zdlciWsiovPL3JekabDwyIo3dFJRHMi.wkmcujtLfO.Ti6', NULL, 1, NULL, NULL),
+(54, 'tomas@gmail.com', '$2y$10$xNmPQs7sL/PmhPT4aAAfFuDzo7YW95xikWNwqN4XzxNjrnONg9ZWm', NULL, 1, NULL, NULL),
+(55, 'yoc@gmail.com', '$2y$10$6tYLfcOkI8X5ygu4y.GVgeFYOkIGITj.rKzmXyAVMy28hn.pJgwJS', NULL, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -193,9 +230,12 @@ INSERT INTO `user_info` (`id`, `user_id`, `batch`, `image`, `name`, `phone`, `cu
 (37, 29, 41, '1592834151_1592818162_john-legend-gty-ml-191113_mn_4x3_608.jpg', 'Hori', '01578524135', 'Germany', 'Delhi', NULL, NULL),
 (44, 36, 39, '1592845707_1592818162_john-legend-gty-ml-191113_mn_4x3_608.jpg', 'Happy', '01785332351', 'India', 'Moulvibazar', NULL, NULL),
 (45, 37, 41, '1592879735_1592818162_john-legend-gty-ml-191113_mn_4x3_608.jpg', 'Sandy John', '01558658478', 'Germany', 'Munich', NULL, NULL),
-(57, 49, 39, '1594354361_yoyo.jpg', 'nishi dey', '01785332352', 'Bangladesh', 'Moulvibazar', NULL, NULL),
 (58, 50, 42, '1594354492_yoyo.jpg', 'Gouri Sen', '01578524135', 'Bangladesh', 'Moulvibazar', NULL, NULL),
-(59, 51, 42, '1594356547_yoyo.jpg', 'Tom HD12', '01785332352', 'India', 'Dhaka', NULL, NULL);
+(59, 51, 42, '1594356547_yoyo.jpg', 'Tom HD12', '01785332352', 'India', 'Dhaka', NULL, NULL),
+(60, 52, 40, '1595313786_yoyo.jpg', 'Urmi', '01578524135', 'Japan', 'Delhi', NULL, NULL),
+(61, 53, 42, '1595314538_yoyo.jpg', 'Dey N', '01785332351', 'USA', 'Delhi', NULL, NULL),
+(62, 54, 41, '1595315327_yoyo.jpg', 'Tomas', '01785332352', 'India', 'Delhi', NULL, NULL),
+(63, 55, 41, '1595316755_yoyo.jpg', 'Yoc', '01578524135', 'Germany', 'Dhaka', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -236,10 +276,24 @@ ALTER TABLE `fund`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `job_offer`
+--
+ALTER TABLE `job_offer`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `news`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `publications`
+--
+ALTER TABLE `publications`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `user`
@@ -292,16 +346,28 @@ ALTER TABLE `fund`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `job_offer`
+--
+ALTER TABLE `job_offer`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `publications`
+--
+ALTER TABLE `publications`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `user_career`
@@ -313,7 +379,7 @@ ALTER TABLE `user_career`
 -- AUTO_INCREMENT for table `user_info`
 --
 ALTER TABLE `user_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `user_job`
@@ -330,6 +396,18 @@ ALTER TABLE `user_job`
 --
 ALTER TABLE `committee`
   ADD CONSTRAINT `committee_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `job_offer`
+--
+ALTER TABLE `job_offer`
+  ADD CONSTRAINT `job_offer_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `publications`
+--
+ALTER TABLE `publications`
+  ADD CONSTRAINT `publications_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user_career`
