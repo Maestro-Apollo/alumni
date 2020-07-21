@@ -174,6 +174,10 @@
             <a style="color:white; padding:10px 10px; background:#007B5E; border-radius:10px; text-decoration:none"
                 class="more_btn" href="add_More.php">Add More</a>
         </div>
+        <div class="add_more">
+            <a style="color:white; padding:10px 10px; background:#007B5E; border-radius:10px; text-decoration:none"
+                class="more_btn" href="change_Pass.php">Change Password</a>
+        </div>
     </div>
 
 

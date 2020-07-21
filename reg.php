@@ -91,7 +91,7 @@ $ObjReg = $obj->resgistrationFunction();
             <br>
             <h3 style="margin-left:500px;margin-top:10px;margin-bottom:20px">Register Here</h3>
             <form
-                style="width:460px ;border:solid 1px #007B5E;padding:0px 10px;border-radius:10px;margin-bottom:30px;margin-left:360px"
+                style="width:460px ;border:solid 2px #007B5E;padding:0px 10px;border-radius:10px;margin-bottom:30px;margin-left:360px"
                 onsubmit="return validation()" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">

@@ -23,8 +23,8 @@
     session_start();
 
     /*receiving values using session variable*/
-    $uMail = $_SESSION["user_mail"];
-    $uId = $_SESSION["user_id"];
+//    $uMail = $_SESSION["user_mail"];
+//    $uId = $_SESSION["user_id"];
 
 
     /*defining variabes for database connection*/
