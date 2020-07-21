@@ -11,8 +11,19 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       About Us
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="mission.php">Mission & Vision</a>
+                        <a class="dropdown-item" href="management.php">Management Committee</a>
+                        <a class="dropdown-item" href="#">People</a>
+                        <a class="dropdown-item" href="contact.php">Contact</a>
+
+
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="gallery.php">Gallery</a>
