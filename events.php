@@ -1,3 +1,33 @@
+<?php
+
+include('classes/database.php');
+class eventData extends database
+{
+    protected $link;
+    public function eventFunction()
+    {
+        if (isset($_POST['search'])) {
+            $name = $_POST['name'];
+            $sql = "select * from event where name like '%$name%' order by id desc";
+            $res = mysqli_query($this->link, $sql);
+        } else {
+            $sql = "select * from event order by id desc";
+            $res = mysqli_query($this->link, $sql);
+        }
+
+        if (mysqli_num_rows($res) > 0) {
+            return $res;
+        } else {
+            return false;
+        }
+        # code...
+    }
+}
+$obj = new eventData;
+$objEvent = $obj->eventFunction();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,32 +53,48 @@
 
     <div class="container mb-5">
         <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-6">
+                <form class="form-inline my-2 my-lg-0 pt-5 float-right" method="post">
+                    <input class="form-control mr-sm-2 " name="name" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <button name="search" class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
 
-            <div class="col-md-8 wow slideInLeft">
+
+
+            <?php if ($objEvent) { ?>
+            <?php while ($row = mysqli_fetch_assoc($objEvent)) { ?>
+            <div class="col-md-12 wow slideInUp">
                 <div class="left-div p-5">
-                    <button class="btn btn-success">2020-08-13</button>
+                    <button class="btn btn-success"><?php echo $row['date']; ?></button>
                     <div class="row pt-4">
 
                         <div class="col-md-6">
-                            <img src="image/image5.jpg" class="img-fluid pb-4" alt="image">
-                            <p class="ml-1">Event Activity</p>
-                            <p class="ml-1">Event Activity</p>
+                            <img src="admin/event_img/<?php echo $row['image']; ?>" class="img-fluid pb-4" alt="image">
+
                         </div>
                         <div class="col-md-6 list_text">
-                            <h5>NEW TOUR</h5>
-                            <p>Test Activity</p>
-                            <p>Date</p>
-                            <p>Time</p>
-                            <p>Type</p>
-                            <p>Duration</p>
+                            <h5><?php echo $row['name']; ?></h5>
+                            <p>Venue: <?php echo $row['venue']; ?></p>
+                            <p>Time: <?php echo $row['time']; ?></p>
+                            <p>Category: <?php echo $row['type']; ?></p>
+                            <p class="ml-1">Details: <?php echo $row['details']; ?></p>
                         </div>
                     </div>
+
                 </div>
-                <button class="btn btn-info mt-5">Add Event</button>
 
             </div>
+            <?php } ?>
+            <?php } else { ?>
+            <p>No Event</p>
+            <?php } ?>
 
-            <div class="col-md-4 right-div wow slideInRight">
+            <!-- <div class="col-md-4 right-div wow slideInRight">
 
                 <h3 class="header">Event Finder</h3>
                 <hr>
@@ -74,7 +120,7 @@
                 <a href="#">March 2019</a>
                 <br>
                 <a href="#">January 2019</a>
-            </div>
+            </div> -->
         </div>
 
     </div>
