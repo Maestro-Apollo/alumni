@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2020 at 12:02 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: Jul 22, 2020 at 07:44 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -43,11 +44,15 @@ CREATE TABLE `committee` (
 
 CREATE TABLE `event` (
   `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `details` text DEFAULT NULL,
+  `details` varchar(1000) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `attachment` varchar(255) DEFAULT NULL,
-  `date` date DEFAULT NULL,
+  `venue` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `time` varchar(255) NOT NULL,
   `created` datetime(6) DEFAULT NULL,
   `updated` datetime(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -337,7 +342,7 @@ ALTER TABLE `committee`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `fund`
