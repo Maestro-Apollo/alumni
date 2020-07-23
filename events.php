@@ -56,8 +56,8 @@ $objEvent = $obj->eventFunction();
             <div class="col-md-6"></div>
             <div class="col-md-6">
                 <form class="form-inline my-2 my-lg-0 pt-5 float-right" method="post">
-                    <input class="form-control mr-sm-2 " name="name" type="search" placeholder="Search"
-                        aria-label="Search">
+                    <input placeholder="Search event name" class="form-control mr-sm-2 " name="name" type="search"
+                        placeholder="Search" aria-label="Search">
                     <button name="search" class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
@@ -82,7 +82,7 @@ $objEvent = $obj->eventFunction();
                             <p>Venue: <?php echo $row['venue']; ?></p>
                             <p>Time: <?php echo $row['time']; ?></p>
                             <p>Category: <?php echo $row['type']; ?></p>
-                            <p class="ml-1">Details: <?php echo $row['details']; ?></p>
+                            <p>Details: <?php echo $row['details']; ?></p>
                         </div>
                     </div>
 

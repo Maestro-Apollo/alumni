@@ -24,6 +24,7 @@ class event extends database
                 return $res;
             } else {
                 echo "Not Created";
+
                 return false;
             }
         }
