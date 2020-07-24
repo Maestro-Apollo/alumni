@@ -538,7 +538,7 @@ include('classes/event.php');
 
     <script>
     $('.datepicker').datepicker({
-        format: 'dd/mm/yyyy',
+        format: 'dd-mm-yyyy',
 
         todayHighlight: true
     });
