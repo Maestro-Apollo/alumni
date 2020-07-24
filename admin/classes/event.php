@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include('database.php');
 class event extends database
 {
@@ -20,12 +20,13 @@ class event extends database
             $res = mysqli_query($this->link, $sql);
             if ($res) {
                 move_uploaded_file($_FILES['image']['tmp_name'], $target);
+                $msg = "Added";
                 // echo "Event Created";
-                return $res;
+                return $msg;
             } else {
-                echo "Not Created";
+                $msg = "Not_Added";
 
-                return false;
+                return $msg;
             }
         }
 

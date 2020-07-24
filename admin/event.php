@@ -369,10 +369,18 @@ include('classes/event.php');
                 <!-- Begin Page Content -->
                 <div class="container">
                     <?php if ($objEvent) { ?>
+                    <?php if (strcmp($objEvent, "Added") == 0) { ?>
                     <div class="alert alert-success alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
                         <strong>Success!</strong> Event Added Successfully!
                     </div>
+                    <?php } ?>
+                    <?php if (strcmp($objEvent, "Added") == 1) { ?>
+                    <div class="alert alert-warning alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Warning!</strong> Invalid Input!
+                    </div>
+                    <?php } ?>
                     <?php } ?>
 
 
