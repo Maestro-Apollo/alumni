@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(189, 250, 214);
+    
+}
+#heading{
+    text-align: center;
+    margin-top: 50px;
+}
+.container{
+    text-align: center;
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

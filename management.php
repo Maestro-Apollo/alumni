@@ -48,16 +48,7 @@
 
 
     
-
-
-
-
-
-
-
-
-
-    <section>
+<section>
         <?php include('layout/footer.php'); ?>
     </section>
 
