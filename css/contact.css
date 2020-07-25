@@ -1,16 +1,15 @@
 body {
-    background-color: rgb(189, 250, 214);
+    background-color: rgb(209, 241, 225);
+    
 }
-
-#heading {
+#heading{
     text-align: center;
     margin-top: 50px;
 }
-
-
-/* .container{
+.container{
     text-align: center;
     position: relative;
     margin-top: 50px;
     margin-bottom: 50px;
-} */
+    
+}
