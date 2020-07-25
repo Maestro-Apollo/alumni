@@ -67,7 +67,8 @@ $objEvent = $obj->eventFunction();
 
             <?php if ($objEvent) { ?>
             <?php while ($row = mysqli_fetch_assoc($objEvent)) { ?>
-            <div class="col-md-12 wow slideInUp shadow mb-5 bg-light">
+            <div class="col-md-12 wow slideInUp shadow mb-5" style="background: rgb(2,0,36);
+background: linear-gradient(141deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 100%);">
                 <div class="left-div p-5">
                     <button class="btn btn-success"><?php echo $row['date']; ?></button>
                     <div class="row pt-4">
@@ -76,7 +77,7 @@ $objEvent = $obj->eventFunction();
                             <img src="admin/event_img/<?php echo $row['image']; ?>" class="img-fluid pb-4" alt="image">
 
                         </div>
-                        <div class="col-md-6 list_text">
+                        <div class="col-md-6 list_text text-light">
                             <h5><?php echo $row['name']; ?></h5>
                             <p>Venue: <?php echo $row['venue']; ?></p>
                             <p>Time: <?php echo $row['time']; ?></p>
