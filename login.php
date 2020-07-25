@@ -17,8 +17,8 @@ class login extends database
                 $row = mysqli_fetch_assoc($res);
                 $pass = $row['password'];
                 $u_id = $row['id'];
-                
-                
+
+
                 $passValid = password_verify($password, $pass);
                 if ($passValid == true) {
 
@@ -59,6 +59,13 @@ $objLogin = $obj->loginFunction();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <style>
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
+    </style>
 </head>
 
 <body>
@@ -68,27 +75,45 @@ $objLogin = $obj->loginFunction();
         <?php include('layout/header.php'); ?>
     </section>
 
-    <div class="container wow fadeInUp">
-        <h2 style="margin:30px 0px;padding-left:470px">Login Here</h2>
-        <form style="border:solid 2px #007B5E; width:400px; border-radius:15px;margin:20px 0px;margin-left:350px"
-            class="needs-validation" method="post" novalidate>
-            <div class="form-group" style="padding: 10px 20px">
-                <label for="uname">Email:</label>
-                <input style="width:330px" type="text" class="form-control" id="uname" placeholder="Enter username"
-                    name="email" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
-            </div>
-            <div class="form-group" style="padding: 0px 20px">
-                <label for="pwd">Password:</label>
-                <input style="width:330px" type="password" class="form-control" id="pwd" placeholder="Enter password"
-                    name="password" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
-            </div>
+    <div class="container wow fadeInUp align-items-center">
+        <form class="needs-validation " method="post" novalidate>
+            <div class="card w-50 mx-auto mt-5 mb-5 shadow">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-4">
 
-            <button style="margin:20px 0px; margin-left:150px; background:#007B5E; color:white" type="submit"
-                name="submit" class="btn btn-primary">Submit</button>
+
+                        </div>
+                        <div class="col-md-4 mt-3 text-center">
+                            <h2>SIGN IN</h2>
+
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="uname">Email:</label>
+                        <input type="text" class="form-control" id="uname" placeholder="Enter username" name="email"
+                            required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password"
+                            name="password" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="card-footer">
+                    <a href="reg.php">Register Now</a>
+                </div>
+            </div>
         </form>
     </div>
 
