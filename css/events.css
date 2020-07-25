@@ -1,9 +1,10 @@
-body {
-    background-color: rgb(189, 250, 214);
+.Main {
+    /*background-color: rgb(189, 250, 214);*/
+    background: #728C69!important;
 }
 
 .left-div {
-    background-color: white;
+    background-color: #728C69;
     margin-top: 80px;
     border-radius: 2%;
 }

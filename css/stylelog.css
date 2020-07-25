@@ -1,0 +1,35 @@
+.Main{
+    background: #728C69;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card{
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+
+
+.btn{
+    margin-left: 210px;
+    background: #007B5E;
+    color: white;
+}
+
+
+.reg{
+    margin-left: 188px;
+    padding: 10px 10px;
+    background: #007B5E;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.reg:hover{
+    color: white;
+    background: #006300;
+    text-decoration: none;
+}
+.btn:hover{
+    background: #006300;
+}

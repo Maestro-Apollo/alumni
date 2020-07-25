@@ -6,7 +6,7 @@ session_start();
 
         if (isset($_POST['submit'])) {
 //            $is_valid = 0;
-            $password = $_POST['password'];
+            $password1 = $_POST['password'];
             
             $uMail = $_SESSION["user_mail"];
             $uId =  $_SESSION["user_id"];
@@ -19,7 +19,7 @@ session_start();
             $dbname = "alumni";
             $link = mysqli_connect($hostname, $username, $password, $dbname);
 
-            $pass = password_hash("$password", PASSWORD_DEFAULT);
+            $pass = password_hash("$password1", PASSWORD_DEFAULT);
 
             $update = "UPDATE user SET password = '$pass' WHERE email='$uMail'";
             $up2 = mysqli_query($link, $update);
@@ -40,9 +40,10 @@ session_start();
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/change_Pass.css">
 </head>
 
-<body>
+<body class="Main">
     <section>
         <?php include('layout/header.php'); ?>
     </section>
@@ -50,9 +51,9 @@ session_start();
     <section>
         <div class="container wow fadeInUp">
             <br>
-            <h3 style="margin-left:480px;margin-top:10px;margin-bottom:20px">Change Password</h3>
-            <form
-                style="width:460px ;border:solid 2px #007B5E;padding:10px 10px;border-radius:10px;margin-bottom:30px;margin-left:360px"
+            <h3 class="header" >Change Password</h3>
+            <form class="Form"
+                
                 onsubmit="return validation()" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
@@ -65,7 +66,7 @@ session_start();
                     <input type="password" id="cnfPassword" name="" class="form-control">
                     <span id="cnfPassError" class="text-danger font-wight-bold"></span>
                 </div>
-               <input style="margin-left:165px" type="submit" value="CONFIRM" id="submitBtn" name="submit"
+               <input  type="submit" value="CONFIRM" id="submitBtn" name="submit"
                     class="btn btn-success mb-4">
 
             </form>

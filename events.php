@@ -39,13 +39,14 @@ $objEvent = $obj->eventFunction();
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-    <link rel="stylesheet" href="css/events.css">
+    
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/events.css">
     <title>Events</title>
 </head>
 
-<body>
+<body class="Main">
 
     <section>
         <?php include('layout/header.php'); ?>

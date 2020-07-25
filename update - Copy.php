@@ -15,10 +15,11 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/update_Copy.css">
 
 </head>
 
-<body>
+<body class="Main">
 
     <?php
     session_start();
@@ -80,10 +81,10 @@
     <div class="container">
         <br>
 
-        <h2 style="margin-left:440px;margin-bottom:30px">Update Profile</h2>
+        <h2 class="header" >Update Profile</h2>
 
         <form
-            style="width:400px; border:solid 1px #007B5E;padding:10px 10px;border-radius:10px;margin-left:360px;margin-bottom:40px"
+             class="Form"
             onsubmit="return validation()" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
@@ -143,7 +144,7 @@
                     value="<?php echo $row2['current_city']; ?>">
                 <span id="crntCityError" class="text-danger font-wight-bold"></span>
             </div>
-            <input style="background:#007B5E; color:white;margin-left:150px" type="submit" id="submitBtn" name="submit"
+            <input type="submit" id="submitBtn" name="submit"
                 class="btn btn-primary">
 
         </form>

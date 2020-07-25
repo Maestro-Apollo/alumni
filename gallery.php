@@ -13,7 +13,7 @@
     <title>Gallery</title>
 </head>
 
-<body>
+<body class="Main">
 
     <section>
         <?php include('layout/header.php'); ?>

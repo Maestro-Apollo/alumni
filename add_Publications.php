@@ -1,14 +1,12 @@
 <?php
 
 session_start();
-
-
+$uMail = $_SESSION["user_mail"];
+$uId = $_SESSION["user_id"];
 
         if (isset($_POST['submit'])) {
             
-            $uMail = $_SESSION["user_mail"];
-            $uId = $_SESSION["user_id"];
-            
+
             $title = $_POST['title'];
             $link = $_POST['link'];
             $date = $_POST['date'];
@@ -42,11 +40,12 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/add_more.css" />
+    <link rel="stylesheet" type="text/css" href="css/add_Publications.css" />
 </head>
 
-<body>
-    
+<body class="mainB">
+   
+   
     <section>
 
         <?php include('layout/header.php'); ?>
@@ -56,23 +55,21 @@ session_start();
     <section>
 
             <br>
-            <h3 style="margin-left:510px;margin-top:10px;margin-bottom:20px">Add Research Publications</h3>
-            <form
-                style="width:600px ;border:solid 1px #007B5E;padding:0px 10px;border-radius:10px;margin-bottom:30px;margin-left:360px"
-                onsubmit="return validation()" method="post" enctype="multipart/form-data">
+            <h3 class="header1">Add Research Publications</h3>
+            
+            <form class="Form" onsubmit="return validation()" method="post" enctype="multipart/form-data">
 
-                <div style="margin-top:15px" class="form-group">
-                    <label>Titile</label>
+                <div class="form-group">
+                    <label>Title</label>
                     <input  type="text" id="name" name="title" class="form-control">
                     <span id="nameError" class="text-danger font-wight-bold"></span>
                 </div>
                 
-                <div style="margin-top:15px" class="form-group">
-                    <label>Date</label>
+                <div class="form-group">
+                    <label>Publication Date</label>
                     <input  type="date" id="name" name="date" class="form-control">
                     <span id="nameError" class="text-danger font-wight-bold"></span>
                 </div>
-
 
                 <div class="form-group">
                     <label>Link</label>
@@ -80,8 +77,7 @@ session_start();
                     <span id="emailError" class="text-danger font-wight-bold"></span>
                 </div>
 
-                <input style="margin-left:240px;padding:5px 20px" type="submit" value="ADD" id="submitBtn" name="submit"
-                    class="btn btn-success mb-4">
+                <input  type="submit" value="ADD" id="submitBtn" name="submit" class="btn btn-success mb-4">
 
             </form>
 

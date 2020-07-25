@@ -1,0 +1,18 @@
+.Main{
+    background: #728C69;
+}
+
+.header{
+    margin-left: 640px;
+    margin-top: 20px;
+}
+
+.info{
+    width: 1000px;
+    margin-bottom: 20px;
+}
+
+.user_information{
+    padding: 10px 10px;
+    margin-bottom: 20px;
+}

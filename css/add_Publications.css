@@ -1,0 +1,37 @@
+.header1{
+    margin-left: 510px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.Form{
+    width: 600px;
+    border: solid 2px black;
+    padding: 0px 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-left: 360px;
+    background: white;
+}
+
+.form-group{
+    margin-top: 15px;
+    padding: 0px 10px;
+}
+
+#submitBtn{
+    margin-left: 240px;
+    padding: 5px 20px;
+}
+
+.mainB{
+    background: #728C69;
+}
+
+/*.form-control{
+    border: 1px solid black;
+}*/
+
+.btn{
+    background: #007B5E;
+}

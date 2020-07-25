@@ -13,10 +13,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/show_News.css">
 
 </head>
 
-<body>
+<body class="Main">
 
     <?php
 
@@ -57,7 +58,7 @@
             if($newsInfo){   
                 ?>
                 
-                <h2 style="margin-left:640px; margin-top:20px;">News</h2>
+                <h2 class="header">News</h2>
                 
                 <?php
                 while($row = mysqli_fetch_row($newsInfo)){
@@ -68,7 +69,7 @@
                     $image = $row[4];
                     ?>
 
-                    <div class="container main_info_area" style="width:1000px;margin-bottom:20px">
+                    <div class="container main_info_area" class="info" >
                         <div class="user_information">
                            <div class="row">
                                <div class="col-md-6">

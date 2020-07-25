@@ -57,18 +57,20 @@ $objLogin = $obj->loginFunction();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!--    <link rel="stylesheet" href="css/stylelog.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-    <link rel="stylesheet" href="css/style.css">
+    
     <link rel="stylesheet" href="css/animate.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylelog.css">
 
-    <style>
+    <!--<style>
     body {
         font-family: 'Montserrat', sans-serif;
     }
-    </style>
+    </style>-->
 </head>
 
-<body>
+<body class="Main">
 
 
     <section>
@@ -111,7 +113,7 @@ $objLogin = $obj->loginFunction();
                     <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="card-footer">
-                    <a href="reg.php">Register Now</a>
+                    <a href="reg.php" class="reg">Register Now</a>
                 </div>
             </div>
         </form>

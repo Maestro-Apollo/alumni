@@ -80,22 +80,23 @@ $ObjReg = $obj->resgistrationFunction();
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/stylereg.css">
 </head>
 
-<body>
+<body class="Main">
     <section>
         <?php include('layout/header.php'); ?>
     </section>
     <section>
         <div class="container wow fadeInUp">
             <br>
-            <h3 style="margin-left:500px;margin-top:10px;margin-bottom:20px">Register Here</h3>
+            <h3 class="header1">Register Here</h3>
             <form
-                style="width:460px ;border:solid 2px #007B5E;padding:0px 10px;border-radius:10px;margin-bottom:30px;margin-left:360px"
+                 class="Form"
                 onsubmit="return validation()" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
-                    <label>Name</label>
+                    <label class="lab">Name</label>
                     <input type="text" id="name" name="name" class="form-control">
                     <span id="nameError" class="text-danger font-wight-bold"></span>
                 </div>
@@ -165,7 +166,7 @@ $ObjReg = $obj->resgistrationFunction();
                     <span id="cnfPassError" class="text-danger font-wight-bold"></span>
                 </div>
 
-                <p>Image:</p>
+                <p class="pp">Image:</p>
                 <div class="custom-file mb-3">
                     <input type="file" class="custom-file-input" id="customFile" name="image" required>
                     <label class="custom-file-label" for="customFile">Choose file</label>
@@ -173,7 +174,7 @@ $ObjReg = $obj->resgistrationFunction();
                     <div class="invalid-feedback">Please fill out this field.</div>-->
                 </div>
 
-                <input style="margin-left:165px" type="submit" value="CONFIRM" id="submitBtn" name="submit"
+                <input class="Btn" type="submit" value="CONFIRM" id="submitBtn" name="submit"
                     class="btn btn-success mb-4">
 
             </form>

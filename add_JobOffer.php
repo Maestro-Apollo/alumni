@@ -50,10 +50,10 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/add_more.css" />
+    <link rel="stylesheet" type="text/css" href="css/add_JobOffer.css" />
 </head>
 
-<body>
+<body class="Main">
     
     <section>
 
@@ -64,9 +64,9 @@ session_start();
     <section>
 
             <br>
-            <h3 style="margin-left:540px;margin-top:10px;margin-bottom:20px">Add Job Offer</h3>
+            <h3 class="header" >Add Job Offer</h3>
             <form
-                style="width:600px ;border:solid 2px #007B5E;padding:0px 10px;border-radius:10px;margin-bottom:30px;margin-left:360px"
+                 class="Form"
                 onsubmit="return validation()" method="post" enctype="multipart/form-data">
 
                 <div style="margin-top:15px" class="form-group">

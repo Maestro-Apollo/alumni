@@ -1,0 +1,50 @@
+.Main{
+    background: #728C69;
+}
+
+.header1{
+    margin-left: 460px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.Form{
+    width: 600px;
+    border: solid 2px black;
+    padding: 0px 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-left: 250px;
+    background: white;
+}
+
+.lab{
+    padding-top: 20px;
+}
+
+.form-group{
+    padding: 10px 10px;
+}
+
+.input-group{
+    padding: 10px 10px;
+}
+
+.pp{
+    padding-left: 10px;
+}
+.custom-file{
+    margin: 10px 0px;
+}
+
+.Btn{
+    margin-left:245px;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    background: #007B5E;
+    color: white;
+    border-radius: 5px;
+}
+.Btn:hover{
+    background: #006300;
+}

@@ -1,0 +1,32 @@
+.Main{
+    background: #728C69;
+}
+
+.header{
+    margin-left: 440px;
+    margin-bottom: 30px;
+}
+
+.Form{
+    width: 580px;
+    border: solid 2px black;
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin-left: 260px;
+    margin-bottom: 40px;
+    background: white;
+}
+
+.form-group{
+    padding: 10px 10px;
+}
+
+.btn{
+    background: #007B5E;
+    color: white;
+    margin-left: 230px;
+    margin-bottom: 20px;
+}
+.btn:hover{
+    background: #007B5E;
+}

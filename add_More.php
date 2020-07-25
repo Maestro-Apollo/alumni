@@ -42,9 +42,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/add_more.css" />
+    
+
 </head>
 
-<body>
+<body class="Main">
    
    <section>
 
@@ -53,10 +55,9 @@
     
  
     
-    <h2 style="margin:30px 0px;padding-left:565px">Job Information</h2>
+    <h2 class="header1" >Job Information</h2>
     
-    <form style="border:solid 1px #007B5E; width:440px; border-radius:15px;margin:20px 0px;margin-left:470px"
-            class="needs-validation" method="post" novalidate>
+    <form class="needs-validation" method="post" novalidate>
             <div class="form-group" style="padding: 0px 20px;padding-top:20px">
                 <label for="uname">Institute:</label>
                 <input style="width:400px" type="text" class="form-control" id="uname" placeholder="Enter institute name"

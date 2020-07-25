@@ -1,0 +1,28 @@
+.Main{
+    background: #728C69;
+}
+
+.header{
+    margin-left: 420px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.Form{
+    
+    width: 580px;
+    border: solid 2px black;
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-left: 250px;
+    background: white;
+}
+
+.form-group{
+    padding: 10px 10px;
+}
+
+.btn{
+    margin-left: 230px;
+}
