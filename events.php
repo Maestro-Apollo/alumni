@@ -39,14 +39,12 @@ $objEvent = $obj->eventFunction();
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-    
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/events.css">
     <title>Events</title>
 </head>
 
-<body class="Main">
+<body style="background-color: #f1f1f1;">
 
     <section>
         <?php include('layout/header.php'); ?>
@@ -63,13 +61,13 @@ $objEvent = $obj->eventFunction();
                 </form>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-5">
 
 
 
             <?php if ($objEvent) { ?>
             <?php while ($row = mysqli_fetch_assoc($objEvent)) { ?>
-            <div class="col-md-12 wow slideInUp">
+            <div class="col-md-12 wow slideInUp shadow mb-4 bg-light">
                 <div class="left-div p-5">
                     <button class="btn btn-success"><?php echo $row['date']; ?></button>
                     <div class="row pt-4">
