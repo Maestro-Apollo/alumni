@@ -44,7 +44,7 @@ $objEvent = $obj->eventFunction();
     <title>Events</title>
 </head>
 
-<body style="background-color: #f1f1f1;">
+<body style="background-color: #fff;">
 
     <section>
         <?php include('layout/header.php'); ?>
@@ -67,7 +67,7 @@ $objEvent = $obj->eventFunction();
 
             <?php if ($objEvent) { ?>
             <?php while ($row = mysqli_fetch_assoc($objEvent)) { ?>
-            <div class="col-md-12 wow slideInUp shadow mb-4 bg-light">
+            <div class="col-md-12 wow slideInUp shadow mb-5 bg-light">
                 <div class="left-div p-5">
                     <button class="btn btn-success"><?php echo $row['date']; ?></button>
                     <div class="row pt-4">
