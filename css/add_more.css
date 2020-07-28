@@ -1,29 +1,73 @@
-.header1 {
-    /*margin: 30px 0px;
-    padding-left: 565px;*/
+.Main{
+    background: #728C69;
 }
 
-.needs-validation {
-    /*border: solid 2px black;
-    width: 440px;
-    border-radius: 15px;
-    margin: 20px 0px;*/
-/*    margin-left: 470px;*/
+.header1 {
+    margin: 30px 0px;
+    text-align: center;
+    color: white;
+/*    text-decoration: underline;*/
+}
+.header2{
+    color: white;
+    margin: 20px 0px;
     
 }
 
-body {
-/*    background-color: #728C69;*/
+.header3{
+    color: white;
+    margin: 20px 0px;
 }
 
+.Anchor{
+    text-decoration: none;
+    color: white;
+/*    padding-right: 20px*/
+}
+
+.Label{
+    color: white;
+    padding-left: 20px;
+}
+
+.information{
+   margin: 20px 0px;
+     background: linear-gradient(#093028,#237A57);
+    width: 340px;
+    border-radius: 10px;
+    
+}
+
+.info{
+    padding: 10px 0px;
+}
+
+
+.needs-validation {  
+    border: solid 2px black;
+    width: 530px;
+    border-radius: 15px;
+    background: white;
+}
+
+
 .form-group{
-    /*style="padding: 0px 20px;padding-top:20px"*/
+    padding: 10px 10px;
 }
 
 .form-control{
      /*style="width:400px"*/
 }
 
+.container{
+    margin-bottom: 30px;
+}
+
 .btn{
-    /*style="margin:20px 0px; margin-left:180px; background:#007B5E; color:white"*/
+    /*style="margin:20px 0px; margin-left:180px; background: color:white"*/
+    margin: 20px 0px;
+    padding: 10px 20px;
+    margin-left: 220px;
+    background: #007B5E;
+    color: white;
 }

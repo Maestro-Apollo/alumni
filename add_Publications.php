@@ -48,7 +48,7 @@ $objPublic = $obj->publicationFunction();
     <link rel="stylesheet" type="text/css" href="css/add_more.css" />
 </head>
 
-<body>
+<body class="Main">
 
     <section>
 
@@ -58,18 +58,18 @@ $objPublic = $obj->publicationFunction();
 
     <section>
         <br>
-        <h3 style="margin-left:510px;margin-top:10px;margin-bottom:20px">Add Research Publications</h3>
-        <form
-            style="width:600px ;border:solid 1px #007B5E;padding:0px 10px;border-radius:10px;margin-bottom:30px;margin-left:360px"
+        <h3 style="margin-left:80px" class="header1" >Add Research Publications</h3>
+        <form class="Form"
+            style="width:600px;margin-left:400px; border:solid 2px black; border-radius:10px;background:white;margin-bottom:30px"
             onsubmit="return validation()" method="post" enctype="multipart/form-data">
 
-            <div style="margin-top:15px" class="form-group">
-                <label>Titile</label>
+            <div class="form-group">
+                <label>Title</label>
                 <input type="text" id="name" name="title" class="form-control">
                 <span id="nameError" class="text-danger font-wight-bold"></span>
             </div>
 
-            <div style="margin-top:15px" class="form-group">
+            <div class="form-group">
                 <label>Date</label>
                 <input type="date" id="name" name="date" class="form-control">
                 <span id="nameError" class="text-danger font-wight-bold"></span>
@@ -82,7 +82,7 @@ $objPublic = $obj->publicationFunction();
                 <span id="emailError" class="text-danger font-wight-bold"></span>
             </div>
 
-            <input style="margin-left:240px;padding:5px 20px" type="submit" value="ADD" id="submitBtn" name="submit"
+            <input type="submit" value="ADD" id="submitBtn" name="submit" style="margin-left:260px"
                 class="btn btn-success mb-4">
 
         </form>

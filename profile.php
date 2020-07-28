@@ -7,12 +7,19 @@
     <title>Document</title>
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/profile.css">-->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/profile.css">
-   
 
 </head>
 
@@ -80,7 +87,7 @@
     <div class="container main_info_area">
 
         <div class="edit_profile">
-            <a style="color:white; padding:10px 10px; background:#007B5E; border-radius:10px;text-decoration:none"
+            <a 
                 class="edit_btn" href="update_Info.php">Edit Profile</a>
         </div>
 
@@ -90,40 +97,43 @@
         </div>
         
         <div class="chngImg">
-            <form style="width:200px" method="post" enctype="multipart/form-data">
-                <!--                <p>Image:</p>-->
-                <div style="margin-left:460px" class="custom-file mb-3">
+            <form class="imgForm" method="post" enctype="multipart/form-data">
+                <div  class="custom-file mb-3">
                     <input type="file" class="custom-file-input Imgcng" id="customFile" name="image"
                         value="Browse Photo">
                     <label class="custom-file-label" for="customFile">New Photo</label>
                 </div>
-                <input style="background:#007B5E;margin-left:500px;margin-bottom:30px" type="submit" id="submitBtn"
+                <input class="fileInp"  type="submit" id="submitBtn"
                     name="submit" class="btn btn-primary" value="Change Image">
             </form>
 
         </div>
+        
+        
+        <h2 class="header1">Biodata</h2>
 
         <div class="user_information">
             <div class="row">
                 <div class="col-md-6 name_batch">
-                    Name - <a style="text-decoration:none;color:black" href="#"> <?php echo $row2['name']; ?> </a><br>
-                    Batch - <a style="text-decoration:none;color:black" href="#"> <?php echo $row2['batch']; ?> </a><br>
-                    Current Country - <a style="text-decoration:none;color:black" href="#">
+                    <label class="Label1">Name - </label><a class="Label"  href="#"> <?php echo $row2['name']; ?> </a><br>
+                    
+                    <label class="Label1">Batch - </label><a class="Label"  href="#"> <?php echo $row2['batch']; ?> </a><br>
+                    <label class="Label1">Current Country - </label><a class="Label" href="#">
                         <?php echo $row2['current_country']; ?> </a><br>
                 </div>
 
                 <div class="col-md-6 institute">
-                    Institute - <a style="text-decoration:none;color:black" href="#"> Institute name </a><br>
-                    Position - <a style="text-decoration:none;color:black" href="#"> Position name </a><br>
-                    Current City - <a style="text-decoration:none;color:black" href="#">
+                    <label class="Label1">Institute - </label><a class="Label"  href="#"> Institute name </a><br>
+                    <label class="Label1">Position - </label><a class="Label" href="#"> Position name </a><br>
+                    <label class="Label1">Current City - </label><a class="Label"  href="#">
                         <?php echo $row2['current_city']; ?> </a><br>
                 </div>
             </div>
 
             <div class="contact">
-                Phone - <a style="text-decoration:none;color:black" href="#" class="phone">
+                <label class="Label">Phone - </label><a class="Label phone"  href="#" class="phone">
                     <?php echo $row2['phone']; ?> </a>
-                Email - <a style="text-decoration:none;color:black" href="#" class="mail"> <?php echo $row1['email']; ?>
+                <label class="Label">Email - </label><a class="Label email" href="#" class="mail"> <?php echo $row1['email']; ?>
                 </a>
             </div>
         </div>
@@ -138,7 +148,7 @@
             if($resCareer){   
                 ?>
                 
-                <h2 style="margin-left:580px; margin-top:20px;">Previous Jobs</h2>
+                <h2 class="header" >Previous Jobs</h2>
                 
                 <?php
                 while($row = mysqli_fetch_row($resCareer)){
@@ -153,19 +163,19 @@
                         <div class="user_information">
                             <div class="row">
                                 <div class="col-md-6 name_batch">
-                                    Institute - <a style="text-decoration:none;color:black" href="#"> <?php  echo $ins; ?> </a><br>
-                                    Position - <a style="text-decoration:none;color:black" href="#"> <?php  echo $pos; ?> </a><br>
+                                    <label class="Label">Institute - </label><a class="Label"  href="#"> <?php  echo $ins; ?> </a><br>
+                                    <label class="Label">Position - </label><a class="Label" href="#"> <?php  echo $pos; ?> </a><br>
                                 </div>
 
                                 <div class="col-md-6 institute">
-                                    Joining date - <a style="text-decoration:none;color:black" href="#"> <?php  echo $j_date; ?> </a><br>
-                                    Ending date - <a style="text-decoration:none;color:black" href="#"> <?php  echo $e_date; ?> </a><br>
+                                    <label class="Label">Joining Date - </label> <a class="Label" href="#"> <?php  echo $j_date; ?> </a><br>
+                                    <label class="Label">Ending Date - </label> <a class="Label" href="#"> <?php  echo $e_date; ?> </a><br>
                                 </div>
                             </div>
                             
                             <div class="row">
-                                <a href="edit_Job.php?id1=<?php echo row['id']; ?>" style="padding:10px 10px; text-decoration:none;backgrouond:white;color:black">Edit</a>
-                                <a href="delete_Job.php?id2=<?php echo row['id']; ?>" style="padding:10px 10px; text-decoration:none;backgrouond:white;color:black">Delete</a>
+                                <a class="Label" href="edit_Job.php?id1=<?php echo $row['id']; ?>" style="padding:10px 10px; text-decoration:none;backgrouond:white;color:black">Edit</a>
+                                <a class="Label" href="delete_Job.php?id2=<?php echo $row['id']; ?>" style="padding:10px 10px; text-decoration:none;backgrouond:white;color:black">Delete</a>
                             </div>
                         </div>
                     </div>
@@ -237,9 +247,8 @@
         <?php include('layout/footer.php') ?>
     </section>
     
-    <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    
+
     
 </body>
 

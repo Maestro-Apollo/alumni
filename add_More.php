@@ -60,20 +60,21 @@
        <title>Add More</title>
        <meta charset="utf-8" />
        <meta name="viewport" content="width=device-width, initial-scale=1" />
-       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-       <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" /> -->
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+      
+       
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+       
        <link rel="stylesheet" type="text/css" href="css/style.css" />
+       <link rel="stylesheet" href="css/animate.css">
        <link rel="stylesheet" type="text/css" href="css/add_more.css" />
 
 
    </head>
 
-   <body>
+   <body class="Main">
 
        <section>
 
@@ -82,45 +83,66 @@
 
 
 
-       <h2 class="header1">Job Information</h2>
+       <h2 class="header1">Add Job Information</h2>
        
        
        <!--previous user information starts-->
        
-       <div class="user_information">
+       <div class="container">
            
            <div class="row">
               <!--previous information starts-->
                <div class="col-md-6">
-                   <div class="row">
-                        <div class="col-md-6 name_batch">
-                            Name - <a style="text-decoration:none;color:black" href="#"> <?php echo $row2['name']; ?> </a><br>
-                            Batch - <a style="text-decoration:none;color:black" href="#"> <?php echo $row2['batch']; ?> </a><br>
-                            Current Country - <a style="text-decoration:none;color:black" href="#">
+                 <h3 class="header2">Personal Info.</h3>
+                  <div class="information">
+                    <div class="row info">
+                        
+                        <label class="Label">Name-</label><a class="Anchor"  href="#"> <?php echo $row2['name']; ?> </a><br>
+                    </div>
+                        
+                    <div class="row info">
+                        <label class="Label">Batch-</label><a class="Anchor"  href="#"> <?php echo $row2['batch']; ?> </a><br>
+                    </div>
+                           
+                    <div class="row info">
+                        <label class="Label">Current Country-</label><a class="Anchor"  href="#">
                                 <?php echo $row2['current_country']; ?> </a><br>
-                        </div>
+                    </div>
 
-                        <div class="col-md-6 institute">
-                            Institute - <a style="text-decoration:none;color:black" href="#"> Institute name </a><br>
-                            Position - <a style="text-decoration:none;color:black" href="#"> Position name </a><br>
-                            Current City - <a style="text-decoration:none;color:black" href="#">
+                    <div class="row info">
+                        <label class="Label">Institute-</label><a class="Anchor"  href="#"> Institute name </a><br><br>
+                    </div>
+                    <div class="row info">
+                               <label class="Label">Position-</label><a class="Anchor"  href="#"> Position name </a><br>
+                    </div>
+                    <div class="row info">
+                        <label class="Label">Current City-</label><a class="Anchor"  href="#">
                                 <?php echo $row2['current_city']; ?> </a><br>
-                        </div>
                     </div>
-
-                    <div class="contact">
-                        Phone - <a style="text-decoration:none;color:black" href="#" class="phone">
+                            
+                    
+                    <div class="row info">
+                        <label class="Label">Phone-</label><a class="Anchor"  href="#" class="phone">
                             <?php echo $row2['phone']; ?> </a>
-                        Email - <a style="text-decoration:none;color:black" href="#" class="mail"> <?php echo $row1['email']; ?>
-                        </a>
                     </div>
+                    <div class="row info">
+                         <label class="Label">Email-</label><a class="Anchor"  href="#" class="mail"> <?php echo $row1['email']; ?>
+                        </a>
+                    </div>  
+                       
+                   
+                  </div>
+                   
+
                </div>
                <!--previous user information ends-->
                
                
                <!--add more information area starts-->
-               <div class="col-md-6">
-                   <form style="margin-left:-100px" class="needs-validation" method="post" novalidate>
+               <div class="col-md-6 form-area">
+                  <h3 class="header3">Previous Job Info.</h3>
+                  
+                   <form  class="needs-validation" method="post" novalidate>
                        <div class="form-group" >
                            <label for="uname">Institute:</label>
                            <input type="text" class="form-control" id="uname" placeholder="Enter institute name"
