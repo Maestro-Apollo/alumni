@@ -162,6 +162,11 @@
                                     Ending date - <a style="text-decoration:none;color:black" href="#"> <?php  echo $e_date; ?> </a><br>
                                 </div>
                             </div>
+                            
+                            <div class="row">
+                                <a href="edit_Job.php?id1=<?php echo row['id']; ?>" style="padding:10px 10px; text-decoration:none;backgrouond:white;color:black">Edit</a>
+                                <a href="delete_Job.php?id2=<?php echo row['id']; ?>" style="padding:10px 10px; text-decoration:none;backgrouond:white;color:black">Delete</a>
+                            </div>
                         </div>
                     </div>
             <?php
