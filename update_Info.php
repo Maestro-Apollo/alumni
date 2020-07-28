@@ -15,7 +15,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/update_Copy.css">
+    <link rel="stylesheet" href="css/update_Info.css">
 
 </head>
 
@@ -47,7 +47,22 @@
     $row2 = mysqli_fetch_assoc($resID);
 
     /*update starts here*/
+    
+    /*updating image*/
+    if (isset($_POST['submit1'])) {
+        $image = time() . '_' . $_FILES['image']['name'];
+        $target = 'user_img/' . $image;
 
+        move_uploaded_file($_FILES['image']['tmp_name'], $target);
+
+        $userInoUo = "UPDATE user_info SET image = '$image' WHERE user_id='$uId'";
+
+        $up2 = mysqli_query($link, $userInoUo);
+        header("location:update_Info.php");
+    }
+
+    
+    /*updating information*/
     if (isset($_POST['submit'])) {
         $name = $_POST['name'];
         $batch = $_POST['batch'];
@@ -98,19 +113,20 @@
                
               <div class="row">
                   <div class="col-md-12">
-                      <div class="chngImg">
-                        <form style="width:200px" method="post" enctype="multipart/form-data">
+                       
+                        <form class="ImgForm"  method="post" enctype="multipart/form-data">
                             <!--                <p>Image:</p>-->
-                            <div style="margin-left:460px" class="custom-file mb-3">
+                            <div  class="custom-file mb-3">
                                 <input type="file" class="custom-file-input Imgcng" id="customFile" name="image"
                                     value="Browse Photo">
                                 <label class="custom-file-label" for="customFile">New Photo</label>
-                            </div>
-                            <input style="background:#007B5E;margin-left:500px;margin-bottom:30px" type="submit" id="submitBtn"
-                                name="submit" class="btn btn-primary" value="Change Image">
+                            </div><br>
+                            <input class="inputBtn"  type="submit" id="submitBtn"
+                                name="submit1" class="btn btn-primary" value="Change Image">
+                                
                         </form>
 
-                    </div>  
+                     
                   </div>
               </div>
                 
@@ -122,7 +138,7 @@
                
                <form
              class="Form"
-            onsubmit="return validation()" method="post" enctype="multipart/form-data" style="width:300px">
+            onsubmit="return validation()" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
                         <label>Name</label>
@@ -175,7 +191,7 @@
                             value="<?php echo $row2['current_city']; ?>">
                         <span id="crntCityError" class="text-danger font-wight-bold"></span>
                     </div>
-                    <input type="submit" id="submitBtn" name="submit"
+                    <input style="background:#007B5E" type="submit" id="submitBtn" name="submit"
                         class="btn btn-primary">
 
         </form>

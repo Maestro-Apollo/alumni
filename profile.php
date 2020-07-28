@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/profile.css">
@@ -84,12 +81,12 @@
 
         <div class="edit_profile">
             <a style="color:white; padding:10px 10px; background:#007B5E; border-radius:10px;text-decoration:none"
-                class="edit_btn" href="update - Copy.php">Edit Profile</a>
+                class="edit_btn" href="update_Info.php">Edit Profile</a>
         </div>
 
         <!--    creating a div for user image-->
         <div class="image_area">
-            <img class="user_image" src="user_img/<?php echo $row2['image']; ?>">
+            <img style="height:350px;width:350px;border-radius:5px" class="user_image" src="user_img/<?php echo $row2['image']; ?>">
         </div>
         
         <div class="chngImg">
@@ -234,6 +231,11 @@
     <section>
         <?php include('layout/footer.php') ?>
     </section>
+    
+    <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    
 </body>
 
 </html>

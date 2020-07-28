@@ -1,0 +1,64 @@
+.Main{
+    background: #75D886;
+}
+
+.header{
+    margin: 15px 0px;
+    padding-left: 440px;
+}
+
+.Form{
+    border: solid 2px black;
+    background: white;
+    width: 620px;
+    border-radius: 10px;
+    margin: 20px 0px;
+}
+
+.form-group{
+    padding: 10px 15px;
+}
+
+.btn{
+    margin-left: 260px;
+    margin-bottom: 20px;
+}
+
+.image_area{
+    padding: 20px 10px;
+}
+
+.user_image{
+    border-radius: 5px;
+    width: 350px;
+    height: 350px;
+}
+
+.ImgForm{
+/*    style="width:200px"*/
+    width: 360px;
+    padding-left: 70px;
+}
+
+.custom-file{
+/*    style="margin-left:460px"*/
+    width: 220px;
+/*    padding-left: 50px;*/
+    
+}
+
+.Imgcng{
+/*    margin-left: 50px;*/
+/*    padding-left: 40px;*/
+    
+}
+
+.inputBtn{
+/*    style="background:#007B5E;margin-left:500px;margin-bottom:30px"*/
+    background: #007B5E;
+    padding: 10px 10px;
+    border-radius: 5px;
+    color: white;
+    margin-left: 50px;
+    margin-top: 20px;
+}
