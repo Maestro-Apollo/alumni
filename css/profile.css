@@ -1,7 +1,23 @@
+.edit_btn{
+    /*style="color:white; padding:10px 10px; background:#007B5E; border-radius:10px;text-decoration:none"*/
+    color: white;
+    padding: 10px 10px;
+    background: #007B5E;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.edit_profile{
+    margin: 20px 0px;
+}
+
+
+
 .image_area{
-    height: 200px;
+/*    height: 200px;*/
     text-align: center;
-    margin-bottom: 130px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 .user_image{
@@ -12,11 +28,29 @@
     border-radius: 5px;
 }
 
+.imgForm{
+    width:200px;
+}
+
+.custom-file{
+    margin-left:450px;
+}
+
+.fileInp{
+    background: #007B5E;
+    margin-left:490px;
+    margin-bottom:30px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    color: white;
+}
+
 .user_information{
     border: 1px solid black;
     border-radius: 13px;
     padding: 5px 0;
     padding-left: 5px;
+    background: linear-gradient(#093028,#237A57);
 }
 .phone{
     padding-left: 10px;
@@ -33,4 +67,34 @@
 
 .Main{
     background: #728C69;
+/*    background: #93CE92;*/
+}
+
+.header{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    color: white;
+}
+
+.header1{
+    text-align:center;
+    color: white;
+    margin: 30px 0px;
+}
+
+.Label{
+    text-decoration: none;
+    color: white;
+}
+.Label1{
+    color: white;
+}
+.phone{
+    color: white;
+    padding-right: 395px;
+}
+.email{
+    color: white;
+/*    padding-right: 130px;*/
 }

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$row_Select = $_GET['id2']
+$row_Select = $_GET['id2'];
 
     
     /*defining variabes for database connection*/
