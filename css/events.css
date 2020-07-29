@@ -3,12 +3,9 @@
     background: #728C69!important;
 }
 
-.left-div {
-    background-color: #728C69;
-    margin-top: 80px;
-    border-radius: 2%;
-}
-
-.right-div {
-    margin-top: 80px;
+.event_img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
 }

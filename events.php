@@ -41,6 +41,7 @@ $objEvent = $obj->eventFunction();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/events.css">
     <title>Events</title>
 </head>
 
@@ -51,13 +52,12 @@ $objEvent = $obj->eventFunction();
     </section>
 
     <div class="container mb-5">
-        <div class="row">
-            <div class="col-md-6"></div>
-            <div class="col-md-6">
-                <form class="form-inline my-2 my-lg-0 pt-5 float-right" method="post">
-                    <input placeholder="Search event name" class="form-control mr-sm-2 " name="name" type="search"
-                        placeholder="Search" aria-label="Search">
-                    <button name="search" class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+        <div class="">
+            <div class="text-right">
+                <form class=" pt-5" method="post">
+                    <input placeholder="Search event name" class="form-control d-inline-block w-auto" name="name"
+                        type="search" placeholder="Search" aria-label="Search">
+                    <button name="search" class="btn btn-info mb-1" type="submit">Search</button>
                 </form>
             </div>
         </div>
@@ -70,11 +70,13 @@ $objEvent = $obj->eventFunction();
             <div class="col-md-12 wow slideInUp shadow mb-5" style="background: rgb(2,0,36);
 background: linear-gradient(141deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 100%);">
                 <div class="left-div p-5">
-                    <button class="btn btn-success"><?php echo $row['date']; ?></button>
+                    <button class="btn btn-info" style=""><?php echo $row['date']; ?></button>
                     <div class="row pt-4">
 
                         <div class="col-md-6">
-                            <img src="admin/event_img/<?php echo $row['image']; ?>" class="img-fluid pb-4" alt="image">
+                            <div>
+                                <img src="admin/event_img/<?php echo $row['image']; ?>" class="event_img img-fluid pb-4"
+                                    alt="image"></div>
 
                         </div>
                         <div class="col-md-6 list_text text-light">
