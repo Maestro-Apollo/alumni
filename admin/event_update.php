@@ -410,7 +410,7 @@ $objUpData = $obj->updateData();
                                 <div class="col-lg-7">
                                     <div class="p-5">
                                         <div class="text-center">
-                                            <h1 class="h4 text-gray-900 mb-4">Create an Event!</h1>
+                                            <h1 class="h4 text-gray-900 mb-4">Update an Event!</h1>
                                         </div>
 
 
@@ -478,7 +478,7 @@ $objUpData = $obj->updateData();
                                             </div>
                                             <button type="submit" name="submit"
                                                 class="btn btn-primary btn-user btn-block">
-                                                Add Event
+                                                Update Event
                                             </button>
 
 
