@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -75,7 +75,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Event Screens:</h6>
                         <a class="collapse-item" href="event.php">Add Event</a>
-                        <a class="collapse-item" href="register.html">Manage Event</a>
+                        <a class="collapse-item" href="event_manage.php">Manage Event</a>
 
                     </div>
                 </div>

@@ -328,7 +328,9 @@ include('classes/event.php');
                     <?php if (strcmp($objEvent, "Added") == 0) { ?>
                     <div class="alert alert-success alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <strong>Success!</strong> Event Added Successfully!
+                        <strong>Success!</strong> Event Added Successfully! <a href="../events.php" target="_blank"
+                            class="ml-2" style="text-decoration:none;"><strong>view
+                                page</strong></a>
                     </div>
                     <?php } ?>
                     <?php if (strcmp($objEvent, "Added") == 1) { ?>

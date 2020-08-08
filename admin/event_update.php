@@ -1,11 +1,66 @@
 <?php
 session_start();
-include('classes/event_manage.php');
+include('classes/database.php');
+class update_event extends database
+{
+    protected $link;
+    public function updateFunction()
+    {
+        $id = $_GET['id'];
+        $sql = "Select * from event where id = '$id'";
+        $res = mysqli_query($this->link, $sql);
+        if (mysqli_num_rows($res) > 0) {
+            return $res;
+        } else {
+            return false;
+        }
+        # code...
+    }
 
-if (isset($_SESSION['upMsg'])) {
-    $upMsg = $_SESSION['upMsg'];
+    public function updateData()
+    {
+        if (isset($_POST['submit'])) {
+            $id = $_GET['id'];
+
+            $name = $_POST['name'];
+            $details = addslashes($_POST['details']);
+            $date = $_POST['date'];
+            $time = $_POST['time'];
+            $image = time() . '_' .  $_FILES['image']['name'];
+            $type = $_POST['type'];
+            $venue = $_POST['venue'];
+            $target = 'event_img/' . $image;
+
+
+            if ($_FILES['image']['name'] == '') {
+                $sql2 = "UPDATE `event` SET `name`='$name',`details`='$details',`venue`='$venue',`type`='$type',`date`='$date',`time`='$time' WHERE `id` = '$id'";
+            } else {
+                $sql2 = "UPDATE `event` SET `name`='$name',`image`='$image', `details`='$details',`venue`='$venue',`type`='$type',`date`='$date',`time`='$time' WHERE `id` = '$id'";
+                move_uploaded_file($_FILES['image']['tmp_name'], $target);
+            }
+            $res2 = mysqli_query($this->link, $sql2);
+
+            if ($res2) {
+                $msg = "Updated";
+                $_SESSION['upMsg'] = $msg;
+                header('location:event_manage.php');
+
+                return $msg;
+            } else {
+                $msg = "Not Updated";
+                $_SESSION['upMsg'] = $msg;
+                header('location:event_manage.php');
+                return $msg;
+            }
+        }
+        # code...
+    }
 }
+$obj = new update_event;
+$objUpdate = $obj->updateFunction();
+$row = mysqli_fetch_assoc($objUpdate);
 
+$objUpData = $obj->updateData();
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +87,9 @@ if (isset($_SESSION['upMsg'])) {
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
 </head>
 
 <body id="page-top">
@@ -75,11 +132,9 @@ if (isset($_SESSION['upMsg'])) {
             <!-- Nav Item - Utilities Collapse Menu -->
 
 
-            <!-- Divider -->
-
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
@@ -89,7 +144,7 @@ if (isset($_SESSION['upMsg'])) {
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Event Screens:</h6>
                         <a class="collapse-item" href="event.php">Add Event</a>
-                        <a class="collapse-item" href="register.html">Manage Event</a>
+                        <a class="collapse-item" href="event_manage.php">Manage Event</a>
 
                     </div>
                 </div>
@@ -329,86 +384,108 @@ if (isset($_SESSION['upMsg'])) {
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container">
+                    <?php if ($objUpData) { ?>
+                    <?php if (strcmp($objUpData, "Updated") == 0) { ?>
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Success!</strong> Event Updated Successfully!
+                    </div>
+                    <?php } ?>
+                    <?php if (strcmp($objUpData, "Updated") == 1) { ?>
+                    <div class="alert alert-warning alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Warning!</strong> Invalid Input!
+                    </div>
+                    <?php } ?>
+                    <?php } ?>
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
 
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                        </div>
-                        <div class="card-body">
 
-                            <?php if (isset($_SESSION['delete'])) { ?>
-                            <div class="alert alert-danger alert-dismissible">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Delete!</strong> Event Data Removed!
-                            </div>
-                            <?php }
-                            unset($_SESSION['delete']); ?>
-                            <?php if (isset($_SESSION['upMsg'])) { ?>
-                            <div class="alert alert-success alert-dismissible">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Delete!</strong> Event Data Updated!
-                            </div>
-                            <?php }
-                            unset($_SESSION['upMsg']); ?>
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-body p-0">
+                            <!-- Nested Row within Card Body -->
+                            <div class="row">
+                                <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                                <div class="col-lg-7">
+                                    <div class="p-5">
+                                        <div class="text-center">
+                                            <h1 class="h4 text-gray-900 mb-4">Create an Event!</h1>
+                                        </div>
 
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Details</th>
-                                            <th>Venue</th>
-                                            <th>Type</th>
 
-                                            <th>Date</th>
-                                            <th>Time</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Details</th>
-                                            <th>Venue</th>
-                                            <th>Type</th>
+                                        <form class="user" method="post" enctype="multipart/form-data">
+                                            <div class="form-group row">
+                                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                                    <input type="text" id="name" name="name"
+                                                        value="<?php echo $row['name']; ?>"
+                                                        class="form-control form-control-user" id="exampleFirstName"
+                                                        placeholder="Event Name">
+                                                </div>
 
-                                            <th>Date</th>
-                                            <th>Time</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <?php if ($objEvent) { ?>
-                                        <?php while ($rows = mysqli_fetch_assoc($objEvent)) { ?>
-                                        <tr>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea onClick="this.contentEditable='true';" autocomplete="off"
+                                                    spellcheck="false" type="text" class="form-control " name="details"
+                                                    rows="10" cols="30"
+                                                    placeholder="Event Details"><?php echo $row['details']; ?></textarea>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                    <input autocomplete="off" name="date"
+                                                        value="<?php echo $row['date']; ?>" data-provide="datepicker"
+                                                        type="text" class="form-control form-control-user datepicker"
+                                                        id="exampleInputPassword" placeholder="Date">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="input-group date" id="datetimepicker3"
+                                                        data-target-input="nearest">
+                                                        <input name="time" value="<?php echo $row['time']; ?>"
+                                                            autocomplete="off" type="text"
+                                                            class="form-control form-control-user datetimepicker-input"
+                                                            placeholder="Time" data-target="#datetimepicker3" />
+                                                        <div class="input-group-append" data-target="#datetimepicker3"
+                                                            data-toggle="datetimepicker">
+                                                            <div class="input-group-text"><i class="far fa-clock"></i>
+                                                            </div>
+                                                        </div>
 
-                                            <td><?php echo $rows['name']; ?></td>
-                                            <td><?php echo $rows['details']; ?></td>
-                                            <td><?php echo $rows['venue']; ?></td>
-                                            <td><?php echo $rows['type']; ?></td>
-                                            <td><?php echo $rows['date']; ?></td>
-                                            <td><?php echo $rows['time']; ?></td>
-                                            <td>
-                                                <a target="_blank" href="event_update.php?id=<?php echo $rows['id']; ?>"
-                                                    class="btn btn-success btn-block">Update</a>
-                                                <a target="_blank"
-                                                    href="classes/deleteEvent.php?id=<?php echo $rows['id']; ?>"
-                                                    class="btn btn-danger btn-block">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <?php } ?>
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <div class="custom-file">
+                                                        <input name="image" type="file"
+                                                            class="custom-file-input form-control-user" id="customFile">
+                                                        <label class="custom-file-label"
+                                                            for="customFile"><?php echo $row['image']; ?></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                    <input type="text" value="<?php echo $row['type']; ?>" name="type"
+                                                        class="form-control form-control-user" id="exampleFirstName"
+                                                        placeholder="Event Type">
+                                                </div>
+                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                    <input type="text" name="venue" value="<?php echo $row['venue']; ?>"
+                                                        class="form-control form-control-user" id="exampleFirstName"
+                                                        placeholder="Event Venue">
+                                                </div>
+                                            </div>
+                                            <button type="submit" name="submit"
+                                                class="btn btn-primary btn-user btn-block">
+                                                Add Event
+                                            </button>
+
+
+                                        </form>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -476,7 +553,41 @@ if (isset($_SESSION['upMsg'])) {
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/moment.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js">
+    </script>
 
+
+    <script>
+    $('.datepicker').datepicker({
+        format: 'dd-mm-yyyy',
+
+        todayHighlight: true
+    });
+    </script>
+    <script type="text/javascript">
+    $(function() {
+        $('#datetimepicker3').datetimepicker({
+            format: 'LT'
+        });
+    });
+    </script>
+    <script>
+    $(".custom-file-input").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+    </script>
+    <script>
+    $(function() {
+        $('#datetimepicker').datetimepicker(FUNCTION)
+    });
+    </script>
+    <script>
+    // document.getElementById("name").value = "";
+    </script>
 </body>
 
 </html>
