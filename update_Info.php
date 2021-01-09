@@ -7,7 +7,7 @@
     <title>Update Informationo</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<!--    <link rel="stylesheet" href="profile.css" />-->
+    <!--    <link rel="stylesheet" href="profile.css" />-->
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Popper JS -->
@@ -28,7 +28,7 @@
     $uId =  $_SESSION["user_id"];
 
     /*defining variabes for database connection*/
-    $hostname = "localhost";
+    $hostname = "localhost:3325";
     $username = "root";
     $password = "";
     $dbname = "alumni";
@@ -47,7 +47,7 @@
     $row2 = mysqli_fetch_assoc($resID);
 
     /*update starts here*/
-    
+
     /*updating image*/
     if (isset($_POST['submit1'])) {
         $image = time() . '_' . $_FILES['image']['name'];
@@ -61,7 +61,7 @@
         header("location:update_Info.php");
     }
 
-    
+
     /*updating information*/
     if (isset($_POST['submit'])) {
         $name = $_POST['name'];
@@ -93,56 +93,55 @@
     <section>
         <?php include('layout/header.php'); ?>
     </section>
-    
+
     <div class="container">
         <br>
 
-        <h2 class="header" >Update Profile</h2>
+        <h2 class="header">Update Profile</h2>
 
-      <!--creating form and image area starts-->
-       <div class="row">
-          <!--image area starts-->
-           <div class="col-md-5">
-              <div class="row">
-                  <div class="col-md-12">
+        <!--creating form and image area starts-->
+        <div class="row">
+            <!--image area starts-->
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-md-12">
                         <div class="image_area">
-                           <img class="user_image" src="user_img/<?php echo $row2['image']; ?>">
-                       </div>  
-                  </div>
-              </div>
-               
-              <div class="row">
-                  <div class="col-md-12">
-                       
-                        <form class="ImgForm"  method="post" enctype="multipart/form-data">
+                            <img class="user_image" src="user_img/<?php echo $row2['image']; ?>">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <form class="ImgForm" method="post" enctype="multipart/form-data">
                             <!--                <p>Image:</p>-->
-                            <div  class="custom-file mb-3">
+                            <div class="custom-file mb-3">
                                 <input type="file" class="custom-file-input Imgcng" id="customFile" name="image"
                                     value="Browse Photo">
                                 <label class="custom-file-label" for="customFile">New Photo</label>
                             </div><br>
-                            <input class="inputBtn"  type="submit" id="submitBtn"
-                                name="submit1" class="btn btn-primary" value="Change Image">
-                                
+                            <input class="inputBtn" type="submit" id="submitBtn" name="submit1" class="btn btn-primary"
+                                value="Change Image">
+
                         </form>
 
-                     
-                  </div>
-              </div>
-                
-           </div>
-           <!--image area ends-->
-           
-           <!--form area for update starts-->
-           <div class="col-md-7">
-               
-               <form
-             class="Form"
-            onsubmit="return validation()" method="post" enctype="multipart/form-data">
+
+                    </div>
+                </div>
+
+            </div>
+            <!--image area ends-->
+
+            <!--form area for update starts-->
+            <div class="col-md-7">
+
+                <form class="Form" onsubmit="return validation()" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" id="name" name="name" class="form-control" value="<?php echo $row2['name']; ?>">
+                        <input type="text" id="name" name="name" class="form-control"
+                            value="<?php echo $row2['name']; ?>">
                         <span id="nameError" class="text-danger font-wight-bold"></span>
                     </div>
 
@@ -194,13 +193,13 @@
                     <input style="background:#007B5E" type="submit" id="submitBtn" name="submit"
                         class="btn btn-primary">
 
-        </form>
-               
-           </div>
-           <!--form area for update ends-->
-       </div>
-       <!--ccreating form and image area ends-->
-        
+                </form>
+
+            </div>
+            <!--form area for update ends-->
+        </div>
+        <!--ccreating form and image area ends-->
+
     </div>
 
     <section>
