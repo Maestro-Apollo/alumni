@@ -28,6 +28,8 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
+        <!-- thank you -->
+        <!-- ok -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
